@@ -9,9 +9,11 @@ This repository records literature-sourced experimental fatigue observations and
 | `data/experimental_master_80_candidate_records.csv` | Candidate first-exposure experimental rows from Wu 2021, Romano 2018 as re-reported by Tognan 2024, and Chen 2024 | 80 |
 | `data/chen_2024_tables_3-5_27_failures.csv` | Exact table rows from three specimen geometries, all failed | 27 |
 | `data/roveda_2024_table_4_20_episodes.csv` | Exact fatigue **test episodes** with unresolved runout/retest linkage; held outside the 80-row master | 20 |
+| `data/outcome_adjudication_2026-10-01.csv` | Row-level event and linkage decisions for the six Romano/Tognan threshold labels and three Roveda runouts | 9 |
 | `docs/source_audit.md` | Extraction, outcome, feature-timing, and inclusion decisions | — |
+| `docs/provenance_resolution_2026-10-01.md` | Public-source check and precise specimen-history request fields | — |
 
-The master currently has **66 known failures, eight explicit right-censored Wu runouts, and six Tognan threshold-labelled outcomes whose true failure/censoring status remains unresolved**. The six must be excluded from event-based modelling until adjudicated. The Romano experiment and Tognan re-report are one underlying study, not independent cohorts.
+The master currently has **66 known failures, nine confirmed right-censored runouts (eight Wu and Romano/Tognan specimen 3), and five Tognan threshold-labelled outcomes whose true failure/censoring status remains unresolved**. The five must be excluded from event-based modelling until adjudicated. The Romano experiment and Tognan re-report are one underlying study, not independent cohorts. Tognan's Table 1 explicitly links specimen 3's first runout to its later failed retest 3*.
 
 The Roveda source says runout survivors were retested at a higher stress. Its Table 4 does not identify which failure episode belongs to which previous runout. Consequently its 20 episodes must not be counted as 20 independent specimens. The runout episodes have valid within-episode right-censoring at 10 million cycles, but pooling the rows as independent subjects would duplicate some specimens.
 
@@ -28,4 +30,4 @@ Local row and episode IDs in the CSVs follow printed table order. They are **not
 
 ## Next data decision
 
-Seek the specimen-level linkage of Roveda's runout-to-retest episodes, and adjudicate the six Romano/Tognan threshold outcomes against the original test histories. Then freeze a model-eligible experimental cohort and define study-held-out validation before fitting a synthetic generator.
+Seek the specimen-level linkage of Roveda's runout-to-retest episodes, and adjudicate the five remaining Romano/Tognan threshold outcomes against the original test histories. Then freeze a model-eligible experimental cohort and define study-held-out validation before fitting a synthetic generator.
