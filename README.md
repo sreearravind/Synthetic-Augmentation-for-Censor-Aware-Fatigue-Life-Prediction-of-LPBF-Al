@@ -1,2 +1,6 @@
 # Synthetic-Augmentation-for-Censor-Aware-Fatigue-Life-Prediction-of-LPBF-Al
 This study proposes a study-aware machine learning algorithm that decides whether generated fatigue records should be used, down-weighted, or rejected when predicting the fatigue life of LPBF AlSi10Mg. It would learn that decision from experimental literature data while treating failed specimens as observed fatigue lives and runouts as right-censored observations. Synthetic records would be generated within physically credible stress and manufacturing conditions, then assessed for their contribution to predictions on different, real-data studies. The central test is whether this selective use improves performance over experimental-data-only models, conventional augmentation, and physics-based fatigue baselines—not an assumption that more generated records must help.
+
+## Current experimental data
+
+The [no-author-response data decision](docs/no_author_response_decision.md) defines a 66-record smooth experimental core (57 failures, nine right-censored runouts) and a geometry-aware 75-record sensitivity cohort. Five outcome-ambiguous literature rows and unlinked retest episodes remain outside those cohorts. These counts are data-inclusion decisions, not claims of model performance or journal sufficiency.
