@@ -1,0 +1,10 @@
+fold_id,analysis,train_studies,test_studies,excluded_studies,train_n,train_fail,train_runout,test_n,test_fail,test_runout,excluded_n,interpretation
+E0_Wu_2021,primary_exact_LOSO,Romano_2018;Chen_2024,Wu_2021,,25,24,1,41,33,8,0,Independent exact-data source holdout; paired with E1
+E0_Romano_2018,primary_exact_LOSO,Wu_2021;Chen_2024,Romano_2018,,59,51,8,7,6,1,0,Independent exact-data source holdout; paired with E1
+E0_Chen_2024,primary_exact_LOSO,Wu_2021;Romano_2018,Chen_2024,,48,39,9,18,18,0,0,Independent exact-data source holdout; paired with E1
+E1_Wu_2021,graph_assisted_exact_LOSO,Romano_2018;Chen_2024;Zhang_2022;Glodez_2020,Wu_2021,,51,44,7,41,33,8,0,Same exact test IDs as E0; graph tier augments training only
+E1_Romano_2018,graph_assisted_exact_LOSO,Wu_2021;Chen_2024;Zhang_2022;Glodez_2020,Romano_2018,,85,71,14,7,6,1,0,Same exact test IDs as E0; graph tier augments training only
+E1_Chen_2024,graph_assisted_exact_LOSO,Wu_2021;Romano_2018;Zhang_2022;Glodez_2020,Chen_2024,,74,59,15,18,18,0,0,Same exact test IDs as E0; graph tier augments training only
+X0_Zhang_2022,external_graph_test,Wu_2021;Romano_2018;Chen_2024,Zhang_2022,Glodez_2020,66,57,9,20,15,5,6,Unseen R=0 approximate test; domain-shift diagnostic only
+X0_Glodez_2020,external_graph_test,Wu_2021;Romano_2018;Chen_2024,Glodez_2020,Zhang_2022,66,57,9,6,5,1,20,Unseen R=0 approximate test; domain-shift diagnostic only
+N0_Chen_R5,within_study_notch_transfer,Wu_2021;Romano_2018;Chen_2024,Chen_2024:R5_notched,,66,57,9,9,9,0,0,Within Chen study: geometry transfer only; not external validation
