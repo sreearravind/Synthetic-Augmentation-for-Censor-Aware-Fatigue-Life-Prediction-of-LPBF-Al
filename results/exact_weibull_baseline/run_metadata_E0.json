@@ -1,0 +1,36 @@
+{
+  "input_sha256": {
+    "no_author_dependency/smooth_core_66.csv": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "validation/record_membership_2026-10-02.csv": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91"
+  },
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "model": "Weibull AFT on cycles; log10 scale alpha+beta*log2(stress_amplitude_MPa/100); k shared per fit; beta<=0",
+  "predictors": [
+    "stress_amplitude_MPa"
+  ],
+  "likelihood": "failures log density of Z=log10 cycles; runouts log survival above bound",
+  "fixed_bounds": {
+    "alpha": [
+      0,
+      12
+    ],
+    "beta": [
+      -12,
+      0
+    ],
+    "log_shape": [
+      -4,
+      3
+    ]
+  },
+  "folds": [
+    "E0_Wu_2021",
+    "E0_Romano_2018",
+    "E0_Chen_2024"
+  ],
+  "reporting": "no graph data or synthetic data; no record-level random split"
+}
