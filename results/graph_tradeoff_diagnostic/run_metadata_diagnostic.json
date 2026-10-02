@@ -1,0 +1,24 @@
+{
+  "purpose": "Exploratory source and outcome decomposition; do not select model or graph weights by held-out score",
+  "variants": [
+    "exact_only",
+    "zhang_only",
+    "glodez_only",
+    "graph_failures_only",
+    "graph_runouts_only",
+    "both_graph_sources"
+  ],
+  "input_sha256": {
+    "smooth": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "graph": "491fd2afc125d47d9b098340890b003711bd973a8de57884eeecca8c04ef91c1",
+    "membership": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91",
+    "E0_metrics": "6730cf6770aac5b85b857c1e8d753d3e1839d7fc01d7e500ab8cc046aaa69e06"
+  },
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "model": "same stress-only Weibull AFT, optimization bounds and exact held-out rows as E0/E1",
+  "graph_failure_only_and_runout_only": "selection on outcome solely for mechanism diagnosis, never a proposed training protocol"
+}

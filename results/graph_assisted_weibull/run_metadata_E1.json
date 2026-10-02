@@ -1,0 +1,21 @@
+{
+  "inputs_sha256": {
+    "no_author_dependency/smooth_core_66.csv": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "graph_digitized/graph_approximate_26.csv": "491fd2afc125d47d9b098340890b003711bd973a8de57884eeecca8c04ef91c1",
+    "validation/record_membership_2026-10-02.csv": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91",
+    "E0_heldout_predictions": "3711031ce78941aeae1a12af66557ff1e7eb3db4bc728e28dcbecc611ae8dad0",
+    "E0_fold_metrics": "6730cf6770aac5b85b857c1e8d753d3e1839d7fc01d7e500ab8cc046aaa69e06"
+  },
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "model": "Exactly E0 Weibull AFT stress-only shape and fixed optimization bounds",
+  "graph_stress": "R=0: stress amplitude = graph maximum stress / 2; stored center is rounded",
+  "graph_failure_life": "center plotted approximate cycles; lower/upper from recorded log10 reading bounds",
+  "graph_runout": "paper-supported survival bound fixed across scenarios; only stress changes",
+  "uncertainty_scenarios": "3x3 common-direction lower/center/upper stress and failure life across graph rows; not a confidence interval",
+  "additional_scenario": "central graph rows excluding flagged Zhang Z05",
+  "test_rule": "unchanged exact E0 test rows; no graph or synthetic record in test"
+}

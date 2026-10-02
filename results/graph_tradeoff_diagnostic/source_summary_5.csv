@@ -1,0 +1,6 @@
+study_id,tier,n,failures,runouts,stress_ratio_R,stress_amp_min_MPa,stress_amp_max_MPa,min_failure_cycles,max_failure_cycles,runout_bounds_cycles
+Wu_2021,source_table_exact,41,33,8,0.1,22.5,90.0,34800,3350000,10000000;10000000;10000000;10000000;10000000;10000000;10000000;10000000
+Romano_2018,source_table_exact,7,6,1,-1,90.0,200.0,474,237485,8889311
+Chen_2024,source_table_exact,18,18,0,0.1,67.5,99.0,60097,2048262,
+Zhang_2022,graph_approximate,20,15,5,0,54.1,99.2,77085,98921439,100000000;100000000;100000000;100000000;100000000
+Glodez_2020,graph_approximate,6,5,1,0,57.0,79.8,59012,1397331,4000000
