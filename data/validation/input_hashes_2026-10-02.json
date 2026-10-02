@@ -1,0 +1,15 @@
+{
+  "input_sha256": {
+    "smooth": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "confirmed": "22ec4562b305cc169a40da38168d85160d4f5c1c29d231444541d5a8a3d3dcbf",
+    "graph": "491fd2afc125d47d9b098340890b003711bd973a8de57884eeecca8c04ef91c1"
+  },
+  "repository_source_paths": {
+    "smooth": "data/cohorts/smooth_core_66.csv",
+    "confirmed": "data/cohorts/confirmed_outcomes_75.csv",
+    "graph": "data/graph_digitized/independent_sources_26_approximate.csv"
+  },
+  "split_rule": "study_id exclusive, except N0 within-study geometry transfer",
+  "fold_count": 9,
+  "membership_rows": 733
+}
