@@ -47,3 +47,7 @@ using natural logarithms and density **with respect to log10 cycles**. For M1, i
 ## Next execution gate
 
 Implement a v2-specific reader and weighted M1 objective, test the frozen identity/group/censor invariants and the 161/321 integration checks, then run C0/C1/S0/S1 on the fixed folds. Preserve the protocol and all outputs before examining the reserved sources.
+
+## Pre-score implementation clarification, 6 October 2026
+
+Before any v2 fold scores were produced, two generator guard failures were identified: a finite latent lifetime beyond (10^{12}) cycles (correctly observed as a runout at (10^7)) and a latent draw below one cycle. The numerical generator now evaluates the censor event in log space, so an extremely long finite latent draw becomes the source's recorded (10^7)-cycle bound without exponentiation. It redraws a subcycle latent sample at the **same measured training stress and source offset** until (N \ge 1); the number of rejected subcycle draws is written per generated episode to the synthetic ledger. This conditions the teacher's synthetic distribution on physically countable lifetimes and does not change the real test rows, fold assignment, likelihood weights, or score. A nonfinite draw or more than 10,000 subcycle rejections invalidates that predeclared replicate and is reported. This clarification was locked before inspecting any v2 test score.
