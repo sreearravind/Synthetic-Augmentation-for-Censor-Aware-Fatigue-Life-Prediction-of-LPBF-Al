@@ -1,5 +1,7 @@
 # Matušů 2026 full-text protocol audit (6 October 2026)
 
+> **Later cohort decision:** The bounded cross-publication screen and 199-row development v2 freeze are recorded in [development v2 overlap and membership lock](development_v2_overlap_and_membership_lock_2026-10-06.md). This file preserves the earlier candidate-stage reasoning.
+
 ## Documents checked
 
 - User-provided full 2026 article, [Matušů et al., Results in Engineering 32, 112570](https://drive.google.com/file/d/1T5dFDHVOwxAectVLCl-lB5cMBjjSmBb8/view?usp=drivesdk), DOI [10.1016/j.rineng.2026.112570](https://doi.org/10.1016/j.rineng.2026.112570). Specific evidence: Table 3 (four build platforms and source labels), §2.9 (fatigue protocol), Fig. 13 (failure/runout symbols), references [18] and [26].
@@ -28,4 +30,4 @@ These 133 rows are literature-exact with respect to tabulated stress and cycles 
 
 ## Next gate
 
-Reference [26] maps to the recycled-powder 41–44 platform on published sample count, conditions and tensile values. Check other prior reports for any reuse of the virgin-powder 91–94 platform; then define a versioned development cohort and study/platform-aware sensitivity design *before* seeing reserved Strauß/Kempf outcomes. The anonymous `XX` record can remain excluded without blocking this work.
+Reference [26] maps to the recycled-powder 41–44 platform on published sample count, conditions and tensile values. The subsequent [v2 audit](development_v2_overlap_and_membership_lock_2026-10-06.md) compares additional publications and freezes the 133 identified rows alongside the 66 exact core, with four publication groups and three nested Matušů platform families. Anonymous `XX` remains excluded. The next task is grouped-fold feasibility and pretest feature harmonization; reserved Strauß/Kempf outcomes remain unopened.
