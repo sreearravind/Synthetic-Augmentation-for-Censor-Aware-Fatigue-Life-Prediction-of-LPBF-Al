@@ -1,0 +1,35 @@
+{
+  "status": "exploratory parametric-bootstrap self-distillation, not a novel algorithm or independent evidence",
+  "generator": "posterior training-source offset; empirical training stress; Weibull latent life; Wu documented stop at 1e7",
+  "no_source_wide_stop_for_Romano": "single first-exposure bound 8,889,311 not generalized",
+  "no_stop_for_Chen": "no censored observation in frozen exact cohort",
+  "only_Wu_generates": "therefore held-out Wu fold has no synthetic rows and is a zero-change control",
+  "graphical_training": "53 failures, both graph sources capped at five effective contributions each",
+  "tau": 0.25,
+  "seeds": [
+    13,
+    29,
+    47,
+    71,
+    101
+  ],
+  "synthetic_rows_per_eligible_source": 20,
+  "synthetic_caps": [
+    2.0,
+    5.0
+  ],
+  "no_synthetic_test_rows": true,
+  "no_external_test": true,
+  "input_hashes": {
+    "exact": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "manifest": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91",
+    "graph53": "9760dcaffb44f2a93f982cda0358834ae3042e22f72253ca5335bf847700d374",
+    "base_parameters": "e5c8460a7e7e85686818e09756eb5a1735e5fe3cbaabe24c0bd868369a588c10",
+    "base_metrics": "b09f0678077909982eb363004851299dea2c76ac81e7b4e5cbf059e313e6f699"
+  },
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}
