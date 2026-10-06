@@ -1,0 +1,28 @@
+{
+  "status": "exploratory previously inspected exact folds; not confirmatory",
+  "fixed_model": "M1 study-marginal Weibull AFT, fixed tau=0.25",
+  "hypothetical_graph_likelihood": "fractional per-row log likelihood inside study offset integral",
+  "graph_source_total_caps": [
+    2.5,
+    5,
+    10
+  ],
+  "primary_diagnostic_cap": 5,
+  "reading_scenarios": "center, joint low/low, joint high/high; reading bounds not confidence intervals",
+  "train_rule": "frozen exact train studies plus two graph-only source groups; candidate graph failures only",
+  "test_rule": "66 unchanged exact outcomes, three already inspected leave-study-out folds",
+  "no_new_external_test": true,
+  "no_synthetic_data": true,
+  "input_sha256": {
+    "exact": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+    "manifest": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91",
+    "graph53": "9760dcaffb44f2a93f982cda0358834ae3042e22f72253ca5335bf847700d374",
+    "baseline_fits": "fae22cded74344afccaea2ae6d363507d7fce1a795999d0a779cb7e88eab2d2f",
+    "baseline_scores": "3e35da20eaba7a9ecfff35f41461c4ab44275efc73777e00101ff32698f69617"
+  },
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}
