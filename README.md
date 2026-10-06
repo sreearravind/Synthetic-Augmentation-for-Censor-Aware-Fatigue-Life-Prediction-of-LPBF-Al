@@ -3,4 +3,6 @@ This study proposes a study-aware machine learning algorithm that decides whethe
 
 ## Current experimental data
 
-The [no-author-response data decision](docs/no_author_response_decision.md) defines a 66-record smooth experimental core (57 failures, nine right-censored runouts) and a geometry-aware 75-record sensitivity cohort. Five outcome-ambiguous literature rows and unlinked retest episodes remain outside those cohorts. These counts are data-inclusion decisions, not claims of model performance or journal sufficiency.
+The [development v2 cohort](data/cohorts/development_v2_199_2026-10-06.csv) freezes 199 literature-exact first exposures: 172 failures and 27 runouts across four publication groups. It combines the original 66-record smooth core with 133 identified first exposures from Matušů 2026. See the [overlap and membership audit](docs/development_v2_overlap_and_membership_lock_2026-10-06.md) for exclusions, the three Matušů platform families, and grouped evaluation rules. The previously scored 66-record folds remain historical development results. No synthetic data have entered the experimental cohort, and the reserved external studies remain outside it.
+
+The earlier [no-author-response data decision](docs/no_author_response_decision.md) describes the 66-record core and a 75-record geometry sensitivity cohort. Five outcome-ambiguous Romano/Tognan rows and unlinked Roveda retests remain excluded. Cohort counts are data-inclusion decisions, not claims of model performance or journal sufficiency.
