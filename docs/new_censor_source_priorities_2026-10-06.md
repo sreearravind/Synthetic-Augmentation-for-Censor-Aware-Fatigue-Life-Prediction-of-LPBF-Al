@@ -18,9 +18,9 @@ Purpose: find independent, original LPBF AlSi10Mg fatigue specimens with an even
 - Wu, Romano, and Chen already form the exact core; Glodež and Chen files with alternate names are not new studies. Hamidi Nasab has already been scored externally. Muhammad and Fernandes provide the previously extracted failure-only graph tier, not new censor rows. Do not count a source twice merely because it has a different filename or a follow-on analysis.
 - Candidate counts do not imply journal sufficiency or a predictive gain. The Kramer candidate offers one runout in a bending study; axial runout evidence is still the limiting need.
 
-## Immediate next task
+## Audit update and next task
 
-Independently read Kramer Appendix A2 against its figure and manufacturing protocol, confirm all 19 entries and the one runout, and record an adjudication note for the unlisted runout confirmation tests. In parallel, inspect the Matušů 2026 workbook for specimen identity and censoring fields. Only then decide whether any rows may enter a *new versioned* development cohort; keep the locked exact folds and external tests intact.
+The [Kramer Appendix A2 audit](kramer_2025_appendix_A2_independent_audit_2026-10-06.md) independently checked all 19 rows with zero transcription differences and documented the unlisted runout confirmation tests. The CSV remains candidate-only. Next inspect the Matušů 2026 workbook for specimen identity, original versus repeated exposure, and censoring fields. Only then consider a *new versioned* development cohort; keep the locked exact folds and external tests intact.
 
 ### Source locations
 
