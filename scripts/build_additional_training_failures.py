@@ -23,6 +23,8 @@ MU_HOLD = {
     "MU50": "right_axis_boundary_outcome_unverified",
 }
 FE_HOLD = {
+    "FE02": "overprinted_cross_series_outcome_unresolved",
+    "FE19": "overprinted_cross_series_outcome_unresolved",
     "FE06": "arrow_runout_stop_unverified",
     "FE07": "arrow_runout_stop_unverified",
     "FE17": "arrow_runout_stop_unverified",
