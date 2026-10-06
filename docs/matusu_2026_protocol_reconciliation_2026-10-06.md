@@ -1,5 +1,7 @@
 # Matušů 2026 protocol reconciliation (6 October 2026)
 
+> **Full-text update:** The user-provided 2026 article is now checked. Its §2.9 establishes uniaxial R=0.1 testing and a 10^7-cycle runout stop. Table 3 reference [18] is the 2024 *International Journal of Fatigue* study DOI 10.1016/j.ijfatigue.2024.108357, not the earlier provisional Procedia attribution. See the [full-text protocol audit](matusu_2026_full_text_protocol_audit_2026-10-06.md) and the [133-row protocol-checked candidate file](../data/candidates/matusu_2026_protocol_checked_133_first_exposures.csv). Historical uncertainty below records the state before the full PDF became available.
+
 Scope: follow-up to the [workbook source screen](matusu_2026_workbook_source_screen_2026-10-06.md), using the authors' [Zenodo workbook and figure/table archive](https://zenodo.org/records/22230072), the 2024 [original article](https://doi.org/10.1016/j.prostr.2024.03.035) from the collected papers, and indexed excerpts of the 2026 [publisher article](https://doi.org/10.1016/j.rineng.2026.112570). This is a source audit, **not** an admission of records to the model.
 
 | Question | Evidence checked | Decision |
