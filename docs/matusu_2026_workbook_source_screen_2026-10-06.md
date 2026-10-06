@@ -1,5 +1,7 @@
 # Matušů 2026 fatigue workbook source screen (6 October 2026)
 
+> **Full-text update:** The user-provided 2026 article is now checked. Its §2.9 establishes uniaxial R=0.1 testing and a 10^7-cycle runout stop. Table 3 reference [18] is the 2024 *International Journal of Fatigue* study DOI 10.1016/j.ijfatigue.2024.108357, not the earlier provisional Procedia attribution. See the [full-text protocol audit](matusu_2026_full_text_protocol_audit_2026-10-06.md) and the [133-row protocol-checked candidate file](../data/candidates/matusu_2026_protocol_checked_133_first_exposures.csv). Historical uncertainty below records the state before the full PDF became available.
+
 ## Sources and status
 
 - Authors' [open Zenodo record](https://zenodo.org/records/22230072), DOI 10.5281/zenodo.22230072; inspected `Data_Fatigue_Life_Only.xlsx` (33,851 bytes, MD5 `c6c2df499bc323928d55f08109f45678`) and `Preprint_Matusu_figures_and_tables.zip` (MD5 `a6a540f19d038d7b61ffa4cd964a472e`), especially Table 3, Fig. 13, and their captions.
