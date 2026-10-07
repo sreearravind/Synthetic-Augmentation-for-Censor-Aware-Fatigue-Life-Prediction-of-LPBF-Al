@@ -20,7 +20,7 @@
 | 16 | Horizontal | 0.00354 | 758 | 0.64715 | 0.10 / 1.44652 | 0.02200 |
 | 17 | Horizontal | 0.00204 | 1503 | 0.88642 | 0.09 / 1.01493 | 0.02198 |
 
-The linked [machine-readable candidate ledger](bartosak_2025_lcf_pretest_ct_8_candidate_2026-10-07.json) preserves the original IDs, source field semantics, file paths and ZIP checksum. `nearest_surface_distance_among_top100_mm` is a derived minimum over the published **area-ranked subset**, not necessarily the nearest defect in the entire gauge. The sphericity and distance next to largest area refer to **that same first-ranked defect**. Do not sum projected areas and call the result a porosity fraction.
+The linked [machine-readable candidate ledger](../data/candidates/bartosak_2025_lcf_pretest_ct_8_candidate_2026-10-07.json) preserves the original IDs, source field semantics, file paths and ZIP checksum. `nearest_surface_distance_among_top100_mm` is a derived minimum over the published **area-ranked subset**, not necessarily the nearest defect in the entire gauge. The sphericity and distance next to largest area refer to **that same first-ranked defect**. Do not sum projected areas and call the result a porosity fraction.
 
 ## Implication for the manuscript
 
