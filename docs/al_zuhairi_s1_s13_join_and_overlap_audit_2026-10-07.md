@@ -1,5 +1,7 @@
 # Al-Zuhairi 2026 supplementary audit: S1–S13
 
+> **Later overlap update (same date):** The supplied Lehner 2024 paper resolves the 23 new 30 µm outcomes as process-distinct from its exclusively 60 µm build, while 12 newer 60 µm outcomes remain possible reuse. See the [cross-publication adjudication](lehner_2024_vs_al_zuhairi_2026_overlap_adjudication_2026-10-07.md). The earlier unresolved wording below is retained as this file's initial screen.
+
 Audit date: 2026-10-07. Source: [Al-Zuhairi et al., preprint version 1, posted 22 September 2026](https://www.preprints.org/manuscript/202609.1879). Uploaded source folder: [S1–S13](https://drive.google.com/drive/folders/1EmDF4hcBukWsReUI2sLo1LkM-7RI4lfl). The preprint is not peer reviewed.
 
 ## File inventory and row reconciliation
