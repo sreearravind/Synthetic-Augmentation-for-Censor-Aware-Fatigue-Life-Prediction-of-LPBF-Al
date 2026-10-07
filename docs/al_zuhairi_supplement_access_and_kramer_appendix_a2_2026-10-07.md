@@ -1,5 +1,7 @@
 # Candidate campaign audit: Al-Zuhairi supplement and Kramer Appendix A2
 
+> **Later on 2026-10-07:** The user supplied all 13 CSVs. The [S1–S13 audit](al_zuhairi_s1_s13_join_and_overlap_audit_2026-10-07.md) supersedes the Al-Zuhairi access gate below; the Kramer screen remains as recorded.
+
 Screen date: 2026-10-07. This note is a provenance gate, not an amendment to the frozen v2 cohort (199 rows; 172 failures and 27 right-censored runouts). No model was refit.
 
 ## Al-Zuhairi et al. (2026 preprint): supplement required
