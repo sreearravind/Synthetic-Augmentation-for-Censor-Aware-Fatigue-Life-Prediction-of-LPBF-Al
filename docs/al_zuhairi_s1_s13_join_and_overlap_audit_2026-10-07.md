@@ -28,7 +28,7 @@ S7–S12 have two numeric columns headed fractography and confocal `stress in MP
 
 The authors cite [Lehner et al. 2024](https://doi.org/10.1016/j.ijfatigue.2024.108479) as prior testing/model work, and some authors recur. The new preprint says its six groups were manufactured and tested in this work, but it does not give an explicit prior-campaign specimen-ID crosswalk. The Lehner 2024 original specimen-level table or supplement was not in the supplied folder and could not be retrieved from the indexed publisher page in this audit. **Direct overlap with Lehner remains unresolved.**
 
-As a narrower check, the 35 candidate IDs were compared against [development v2's 199 rows](../data/cohorts/development_v2_199_2026-10-06.csv): zero identical `record_id` strings and zero exact `(stress amplitude, observed cycles, R)` triples. That confirms no exact row collision with the *current* frozen cohort; it cannot prove independence from Lehner 2024, which is not in that cohort. Shared authors, the common machine and the same testing protocol are likewise insufficient to establish a reused specimen.
+As a narrower check, the 35 candidate IDs were compared against [development v2's 199 rows](../data/cohorts/development_v2_199_2026-10-06.csv): zero identical `record_id` strings and zero exact `(stress amplitude, observed cycles, R)` triples. That confirms no exact row collision with the *current* frozen cohort; it cannot prove independence from Lehner 2024, which is not in that cohort. Shared authors and a similar test protocol are likewise insufficient to establish a reused specimen.
 
 ## Decision and next evidence gate
 
