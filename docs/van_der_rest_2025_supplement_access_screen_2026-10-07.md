@@ -1,24 +1,26 @@
-# van der Rest 2025 supplementary-table access and source screen — 7 October 2026
+# van der Rest 2025 article and supplement adjudication — 7 October 2026
 
-**Target.** Camille van der Rest, Rodrigo Arturo Manzano Navarrete, Aude Simar, Olivier Poncelet, “Influence of roughness and subsurface porosity on the fatigue life of AlSi10Mg produced by Laser Powder Bed Fusion,” *Materials Science and Engineering: A* 944 (2025) 148885. [Publisher DOI](https://doi.org/10.1016/j.msea.2025.148885); [UCLouvain open article](https://research.dial.uclouvain.be/entities/publication/b14c73bf-cc3a-4fe7-8c49-f559488ee175).
+**Source files inspected:** user-supplied [three-page supplementary PDF](https://drive.google.com/file/d/1SI9OGfgYtVYqFwqoAABFQDTvFOKBHhzA/view) and [article PDF](https://drive.google.com/file/d/1zz-RarEIv4i1GWtZYrFVcLrKEQXBInwJ/view), from [van der Rest et al., *Materials Science and Engineering: A* 944 (2025) 148885](https://doi.org/10.1016/j.msea.2025.148885). The earlier access limitation is now resolved. Pages 1–3 of the supplement and the article's methods, Tables 4–7, and fatigue figures were inspected. The [aggregate CSV](../data/candidates/van_der_rest_2025_supplement_48_aggregate_strata_2026-10-07.csv) preserves S1–S3 counts by treatment, contour family and **reported maximum stress**. It has **48 strata, not 122 specimen rows**.
 
-## Verification from the article
+## Exact content and cross-check
 
-- The article describes three AlSi10Mg contour families (85–1200 rough; 100–600 smooth; 100–300 smooth with keyhole pores) and stress-relieved, polished, or sandblasted conditions. These are process/treatment groups, not automatically individual numerical features.
-- Main-text Table 4 gives roughness parameters `Ra`, `Rz`, `Rv`, and `Rp` as **group summaries** (mean ± spread). No original specimen identifier joins an individual roughness value to a fatigue observation in that table.
-- Main-text Table 7 and Figures 10–13 document failure-initiation categories and multiple runouts. The figures mark runouts with arrows, and the article describes the `10^7`-cycle stop. The stress levels discussed are **maximum stress** in MPa; do not relabel them stress amplitude.
-- The paper explicitly says supplementary **Table S1** provides fatigue-initiation sites by stress level; **Tables S2 and S3** are cited for further initiation-site detail in polished and sandblasted specimens. Their precise columns, row counts, and any specimen identifiers are **unverified** here.
-- The article's data-availability statement says data will be made available on request. The UCLouvain publication record exposes a PDF of the article; it does not list S1–S3 as separate files on the record inspected.
+| Supplement | Treatment | Stress-level strata | Tested counts by family: rough / smooth / smooth with KHP | Runouts by family | Data beyond counts |
+| --- | --- | ---: | --- | --- | --- |
+| Table S1 | SRHT | 18 | 14 / 14 / 14 | 0 / 0 / 0 | Failure-initiation categories as fractions at each stress |
+| Table S2 | SRHT + polished | 15 | 12 / 13 / 12 | 0 / 3 / 0 | Failure-initiation categories and runout fractions |
+| Table S3 | SRHT + sandblasted | 15 | 12 / 16 / 15 | 4 / 4 / 3 | Failure-initiation categories and runout fractions |
+| **Total** | | **48** | **122 tested in all conditions** | **14 runouts, 108 failures by difference** | No original specimen IDs or numeric failure lives in S1–S3 |
 
-## Access attempts and decision
+The runout fractions in S2/S3 reconcile with article Table 7. S4 and S5 are **additional plots of the same polished and sandblasted tests** shown by families in Figures 10, 11 and 13, not additional campaigns or rows. Arrows and multiplicity labels in S4/S5 agree with the table counts. “Undefined” in S3 describes the **crack initiation site of broken specimens**; it is not an unknown event flag.
 
-Exact title, DOI, PII `S0921509325011098`, `mmc1`, and supplementary-table searches were checked against the public publisher/index and institutional record. The available web retrieval did not return the actual S1–S3 attachments; direct Elsevier CDN candidate URLs were inaccessible through the retrieval service. A name search in the user's connected Drive did not identify a matching supplement. **The supplementary tables were not read.** No conclusions about their undisclosed columns, exact rows, pretest timing, or identifier joins are justified.
+Article §2.4 specifies force-controlled uniaxial tension–tension loading, **R = 0.1**, 30 Hz, **maximum stress** 140–240 MPa, with intact tests stopped at **10^7 cycles**. These are 14 documented runout counts and bounds, but not identified original first-exposure specimens. If later comparing with an amplitude-based model, the formula would be `sigma_a = (1-R)*sigma_max/2 = 0.45*sigma_max`; no conversion or model score was performed here.
 
-| Gate | Evidence as of this audit | Status |
-| --- | --- | --- |
-| Independent first-exposure specimens | Main article describes a new contour/treatment campaign, but original IDs and overlap with other publications need a row-level check. | Pending supplement and provenance |
-| Per-specimen numeric pretest roughness/XCT | Group roughness summaries in Table 4; supplementary contents unknown. Initiation-site labels are postfailure and cannot serve as prospective predictors. | Not established |
-| Stress, life, event, runout bound | Main figures show marked `10^7` runouts and stress maxima; exact rowwise event values/IDs may or may not be in supplements. | Partial, no exact ledger |
-| Eligibility for feature-plus-censor model | Requires all of the above joined on the same original specimen. | **Not admitted** |
+Article §2.3 describes six roughness readings around each characterized sample. Yet Table 4 publishes only roughness **means ± variation for each contour/treatment group**, and provides no specimen IDs paired with S1–S3 outcomes. Its CT analysis (2 μm voxel, 1000 slices for each of the three contour families) describes family-level porosity and does not provide a per-fatigue-specimen CT descriptor joined to outcome. The postfailure initiation categories in S1–S3 cannot be prospective XCT predictors. The polished group has no separate rowwise roughness table in this source.
 
-**Next input needed to resolve this gate:** the actual publisher Supplementary Materials file(s) containing Tables S1–S3, obtainable from the article’s “Supplementary data” section at the [publisher DOI](https://doi.org/10.1016/j.msea.2025.148885). Once present, audit their columns and provenance; if they only give initiation categories, treat them as outcome annotations, never as pretest XCT or roughness. No author data request is necessary for this first inspection. The [v2 cohort](../data/cohorts/development_v2_199_2026-10-06.csv) and fixed comparisons remain untouched.
+## Admission decision
+
+**Feature-plus-censor training: reject.** Neither the main article nor its complete three-page supplement contains the required original specimen ID + same-specimen numeric pretest roughness/XCT + exact fatigue event/life join. Do not populate 122 apparent “specimen” rows from stress-stratum fractions, copy group roughness into each row, or label postfracture initiation as a pretest input.
+
+**Outcome-only potential: bounded.** The source provides 14 precise runout *counts and limits* at group/stress level; failures are displayed as graph symbols rather than a numerical life table. A separately audited graph-reading exercise could assess whether individual failure glyphs can be reconciled with S1–S3 denominators and whether any overlap or retests exist. Read each physical test once: S4/S5 are re-plots. Until that exercise, no exact outcome-only specimen ledger is admitted and the frozen v2 cohort, folds, four-arm comparisons and external results remain unchanged.
+
+The next data task is **independent symbol reconciliation for Figures 6, 10, 11, 13 against S1–S3 counts**, explicitly preserving graph-reading precision and the 14 grouped runout bounds. Do not use S4/S5 as additional observations or run model comparisons during extraction.
