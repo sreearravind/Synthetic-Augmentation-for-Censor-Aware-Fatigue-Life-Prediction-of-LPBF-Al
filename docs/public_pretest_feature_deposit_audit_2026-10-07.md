@@ -1,5 +1,7 @@
 # Public pretest-feature deposit audit — 7 October 2026
 
+> **Resolution, later on 7 October 2026:** The user supplied the three-page publisher supplement and article. [Direct adjudication](van_der_rest_2025_supplement_access_screen_2026-10-07.md) verifies 48 aggregate stress strata representing 122 tests, including 14 runouts at 10^7 cycles. S1–S3 contain no original IDs, numeric failure lives or same-specimen roughness/XCT join. The earlier “pending supplement” statement below describes the state before the supplied file arrived; the resolved decision is **not eligible for specimen-level feature training**. See the [aggregate-only count CSV](../data/candidates/van_der_rest_2025_supplement_48_aggregate_strata_2026-10-07.csv).
+
 **Scope and result.** Targeted publisher, institutional-record, and indexed public-repository checks found no **verified, rowwise, prospective surface/XCT feature joined to first-exposure fatigue outcome and runout** for the screened independent AlSi10Mg campaigns. This is a bounded search result, not a claim that such data do not exist. No cohort rows, fold definitions, models, or external scores were changed.
 
 ## Admission rule
