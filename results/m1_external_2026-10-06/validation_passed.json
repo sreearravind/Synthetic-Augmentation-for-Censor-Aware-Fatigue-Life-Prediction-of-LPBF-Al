@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "exact_sha256": "29aff38de63880dbfbaf65d3b876b81bd5afabfaaaac1615e2e503fbfa661a30",
+  "manifest_sha256": "0df2fdec2399cae1c76c202a323691431bdc96bb9eb31fa278f6b307ac84eb91",
+  "external_blob_sha": "840b7855fdc0d51c988dc6d7816f9b54cb6e2276",
+  "source_folds": [
+    "E0_Wu_2021",
+    "E0_Romano_2018",
+    "E0_Chen_2024"
+  ],
+  "primary_tau": 0.25,
+  "fit_count": 9,
+  "quadrature": "161 vs 321 nodes, tolerance 1e-5",
+  "note": "Development fold scores previously inspected; exploratory"
+}

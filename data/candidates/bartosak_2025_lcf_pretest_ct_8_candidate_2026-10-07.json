@@ -1,0 +1,117 @@
+{
+  "source_doi": "10.5281/zenodo.13828238",
+  "source_zip_sha256": "61e409e261c992acd5119a330242d125aa164acabb1cb6b110192b6f8619e50c",
+  "paper_doi": "10.1016/j.matdes.2025.113926",
+  "context": "LPBF AlSi10Mg recycled-powder strain-controlled low-cycle fatigue; separate candidate; NOT development v2",
+  "measurement_timing": "Paper states selected specimens scanned by X-ray CT before LCF; eight specimen files match eight fatigue IDs; exact individual scan dates not provided",
+  "loading_note": "Plastic strain range delta e pl [-] is the source input; no nominal stress amplitude. Do not convert to HCF stress amplitude.",
+  "censor_note": "All eight Nf entries defined at 10% drop in maximum stress from saturated trend; no runout/censor bounds in supplied file.",
+  "feature_note": "Each defect CSV lists the top 100 by projected area, not all pores; distance and sphericity of largest area are paired to the same first ranked defect; nearest surface is restricted to these 100.",
+  "rows": [
+    {
+      "original_id": "4",
+      "build_direction": "Vertical",
+      "plastic_strain_range": 0.00651,
+      "Nf_cycles_10pct_stress_drop": 463,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.14552,
+      "largest_defect_sphericity": 0.16,
+      "largest_defect_distance_from_free_surface_mm": 2.07433,
+      "nearest_surface_distance_among_top100_mm": 0.5719,
+      "defect_file": "Dataset/defects/Specimen_4.csv"
+    },
+    {
+      "original_id": "7",
+      "build_direction": "Vertical",
+      "plastic_strain_range": 0.00213,
+      "Nf_cycles_10pct_stress_drop": 2577,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.41019,
+      "largest_defect_sphericity": 0.11,
+      "largest_defect_distance_from_free_surface_mm": 1.98945,
+      "nearest_surface_distance_among_top100_mm": 0.37329,
+      "defect_file": "Dataset/defects/Specimen_7.csv"
+    },
+    {
+      "original_id": "8",
+      "build_direction": "Vertical",
+      "plastic_strain_range": 0.00352,
+      "Nf_cycles_10pct_stress_drop": 1124,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.14806,
+      "largest_defect_sphericity": 0.16,
+      "largest_defect_distance_from_free_surface_mm": 0.61787,
+      "nearest_surface_distance_among_top100_mm": 0.47789,
+      "defect_file": "Dataset/defects/Specimen_8.csv"
+    },
+    {
+      "original_id": "10",
+      "build_direction": "Vertical",
+      "plastic_strain_range": 0.00498,
+      "Nf_cycles_10pct_stress_drop": 719,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.65901,
+      "largest_defect_sphericity": 0.09,
+      "largest_defect_distance_from_free_surface_mm": 1.88928,
+      "nearest_surface_distance_among_top100_mm": 0.43993,
+      "defect_file": "Dataset/defects/Specimen_10.csv"
+    },
+    {
+      "original_id": "14",
+      "build_direction": "Horizontal",
+      "plastic_strain_range": 0.0051,
+      "Nf_cycles_10pct_stress_drop": 541,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.72312,
+      "largest_defect_sphericity": 0.09,
+      "largest_defect_distance_from_free_surface_mm": 0.73943,
+      "nearest_surface_distance_among_top100_mm": 0.0,
+      "defect_file": "Dataset/defects/Specimen_14.csv"
+    },
+    {
+      "original_id": "15",
+      "build_direction": "Horizontal",
+      "plastic_strain_range": 0.00669,
+      "Nf_cycles_10pct_stress_drop": 417,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.55292,
+      "largest_defect_sphericity": 0.09,
+      "largest_defect_distance_from_free_surface_mm": 1.52095,
+      "nearest_surface_distance_among_top100_mm": 0.022,
+      "defect_file": "Dataset/defects/Specimen_15.csv"
+    },
+    {
+      "original_id": "16",
+      "build_direction": "Horizontal",
+      "plastic_strain_range": 0.00354,
+      "Nf_cycles_10pct_stress_drop": 758,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.64715,
+      "largest_defect_sphericity": 0.1,
+      "largest_defect_distance_from_free_surface_mm": 1.44652,
+      "nearest_surface_distance_among_top100_mm": 0.022,
+      "defect_file": "Dataset/defects/Specimen_16.csv"
+    },
+    {
+      "original_id": "17",
+      "build_direction": "Horizontal",
+      "plastic_strain_range": 0.00204,
+      "Nf_cycles_10pct_stress_drop": 1503,
+      "event": "failure_at_10pct_stress_drop",
+      "top100_defects_count": 100,
+      "largest_projected_area_mm2": 0.88642,
+      "largest_defect_sphericity": 0.09,
+      "largest_defect_distance_from_free_surface_mm": 1.01493,
+      "nearest_surface_distance_among_top100_mm": 0.02198,
+      "defect_file": "Dataset/defects/Specimen_17.csv"
+    }
+  ]
+}
+

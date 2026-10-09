@@ -1,8 +1,10 @@
 # Censor-aware fatigue life prediction of LPBF AlSi10Mg
 
+**Latest development freeze (6 October 2026):** [v2 exact experimental cohort](../data/cohorts/development_v2_199_2026-10-06.csv) contains 199 first exposures, 172 failures and 27 runouts from four publication groups. Its [overlap, provenance and grouped split manifest](development_v2_overlap_and_membership_lock_2026-10-06.md) is authoritative for forthcoming model comparisons. The original 66 exact-only folds remain fixed historical development results; external Strauß/Löwisch and Kempf outcomes remain excluded and unscored. The inventory and decisions below record the earlier pre-v2 state.
+
 This repository records literature-sourced experimental fatigue observations and source decisions for a planned synthetic-augmentation study. **No synthetic data have been generated or mixed with the experimental records.** Counts below describe candidate data, not a finalized modelling cohort or a journal acceptance threshold.
 
-## Current data
+## Earlier candidate inventory (pre-v2)
 
 | File | Meaning | Count |
 | --- | --- | ---: |
@@ -13,7 +15,7 @@ This repository records literature-sourced experimental fatigue observations and
 | `docs/source_audit.md` | Extraction, outcome, feature-timing, and inclusion decisions | — |
 | `docs/provenance_resolution_2026-10-01.md` | Public-source check and precise specimen-history request fields | — |
 
-The master currently has **66 known failures, nine confirmed right-censored runouts (eight Wu and Romano/Tognan specimen 3), and five Tognan threshold-labelled outcomes whose true failure/censoring status remains unresolved**. The five must be excluded from event-based modelling until adjudicated. The Romano experiment and Tognan re-report are one underlying study, not independent cohorts. Tognan's Table 1 explicitly links specimen 3's first runout to its later failed retest 3*.
+The earlier 80-row candidate master has **66 known failures, nine confirmed right-censored runouts (eight Wu and Romano/Tognan specimen 3), and five Tognan threshold-labelled outcomes whose true failure/censoring status remains unresolved**. The five must be excluded from event-based modelling until adjudicated. The Romano experiment and Tognan re-report are one underlying study, not independent cohorts. Tognan's Table 1 explicitly links specimen 3's first runout to its later failed retest 3*.
 
 The Roveda source says runout survivors were retested at a higher stress. Its Table 4 does not identify which failure episode belongs to which previous runout. Consequently its 20 episodes must not be counted as 20 independent specimens. The runout episodes have valid within-episode right-censoring at 10 million cycles, but pooling the rows as independent subjects would duplicate some specimens.
 
@@ -28,6 +30,6 @@ Postfracture initiator/“killer defect” measurements in Chen and Roveda are r
 
 Local row and episode IDs in the CSVs follow printed table order. They are **not author-assigned specimen IDs**. The previous graphical reading of Romano Figure 7 is a separate approximate, potentially overlapping candidate set and is not included in the exact master.
 
-## Next data decision
+## Remaining data limitations
 
-Seek the specimen-level linkage of Roveda's runout-to-retest episodes, and adjudicate the five remaining Romano/Tognan threshold outcomes against the original test histories. Then freeze a model-eligible experimental cohort and define study-held-out validation before fitting a synthetic generator.
+The five Romano/Tognan outcomes and Roveda's unlinked later loadings remain outside v2. Future re-adjudication requires a new cohort version. The next work is feature harmonization and grouped-fold feasibility under the v2 lock, before fitting or selecting a synthetic generator.

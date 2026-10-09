@@ -1,0 +1,19 @@
+{
+  "status": "scored_fixed_model_external_one_campaign",
+  "forecast_blob": "733a84a7c66ddb11a90a4360fb58be337e0e7487",
+  "forecast_manifest_blob": "61f2d76bfc01592baaf19a17e93a52daa47a794b",
+  "candidate_blob": "88387a39fd4bf873272b32948ebd94ad70f615c6",
+  "scores_blob": "301f12f3f7b251b9427bef4386a478e7a7bf9335",
+  "detail_blob": "f672ca49e04ae66dd7ef95e9250550784597aa6a",
+  "summary_blob": "553657098c816a2982300fc0971d41a99b5fa314",
+  "unique_first_exposures": 32,
+  "failures": 25,
+  "right_censored": 7,
+  "excluded_later_exposures": 8,
+  "anomaly_sensitivity_n": 31,
+  "max_quadrature_delta": 1.7763568394002505e-15,
+  "no_refit": true,
+  "no_external_source_offset_update": true,
+  "outcomes_inspected_at_intake": true,
+  "independent_publications": 1
+}

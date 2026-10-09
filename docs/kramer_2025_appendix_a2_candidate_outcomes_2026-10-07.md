@@ -1,0 +1,19 @@
+# Kramer 2025 Appendix A2 candidate outcome transcription — 7 October 2026
+
+**Status:** source-exact, outcome-only *candidate*, outside the frozen 199-row v2 cohort and outside all model comparisons. [19-row CSV](../data/candidates/kramer_2025_appendix_a2_kh_lof_19_candidate_2026-10-07.csv), Git blob `97700647914a447bafebeac11564e5e969ea07f3`. The data were checked against both the [publisher article Appendix A2](https://link.springer.com/article/10.1007/s40964-025-01288-x) and the [version-of-record PDF, page 11, printed page 11315](https://link.springer.com/content/pdf/10.1007/s40964-025-01288-x.pdf). The 19 published stress-amplitude/load-cycle pairs are 10 keyhole (KH), 9 lack-of-fusion (LoF). The high-density (HD) ten-column series is **excluded** because the article says it reused Wexel et al. 2024; no HD record was transcribed into this new-campaign ledger.
+
+| Printed A2 column | Printed entries | Failure entries | Runout entries | Stress amplitude (MPa) | Published cycles |
+| --- | ---: | ---: | ---: | --- | --- |
+| Keyhole (KH) | 10 | 9 | 1 | 80–150 | 42,400–10,000,000 |
+| Lack of fusion (LoF) | 9 | 9 | 0 | 20–80 | 13,100–317,500 |
+| **Total** | **19** | **18** | **1** | **20–150** | **13,100–10,000,000** |
+
+The KH first printed row is 80 MPa and 10,000,000 cycles. Methods say specimens exceeding 10⁷ cycles count as runouts; the figure uses half symbols and the paper calls the KH 80 MPa result a runout. It is recorded as `event_failure=0`, no failure life, `censor_bound_cycles=10000000`, `bound_operator=≥` (conservative lower-bound interpretation of the printed stop). The other 18 A2 entries are observed failures. The paper mentions a second test confirming the runout stress levels, but Appendix A2 does **not** provide an identifiable additional KH row or a retest-to-original specimen link. Do not manufacture an extra runout or infer a second exposure from that sentence.
+
+Methods give AlSi10Mg PBF-LB, vertical builds subsequently machined, rotating-bending fatigue, R=−1, 50 Hz, stress **amplitude** in MPa. Layer thickness 50 µm; three process settings create HD/KH/LoF populations. All fixed test metadata are repeated as typed ledger fields, while A2's numerical measurements remain in their original units. This is a distinct loading domain from the axial R=0.1 primary development folds.
+
+**Identity and feature gate:** Appendix A2 has no individual fatigue specimen IDs. Ledger keys of the form `Kramer_2025:A2:KH:01` are **derived table-position keys**, not original IDs. The methods state every specimen received confocal roughness measurement before testing, but Table 4 gives only group Sa/Sz mean and SD. Accordingly the per-ID pretest Sa/Sz columns remain blank. Fracture-origin defect measurements are outcome-conditioned. No group mean or postfracture feature may be assigned to a CSV row.
+
+**Integrity checks:** 19 unique derived keys; A2 row positions 1–10 KH and 1–9 LoF; exactly 18 failure flags and one KH censor flag; no blank stress/published cycle, no runout failure cycle, no failure censor bound, no original specimen ID, no per-specimen Sa/Sz. CSV round-trip and remote Git blob `97700647914a447bafebeac11564e5e969ea07f3` matched. Cross-publication reuse was resolved **only** for this article's explicitly reused HD column; wider campaign-overlap and first-exposure identity require further audit if these rows later enter a model cohort.
+
+**Next single task:** assess whether a public source can release **rowwise pretest Sa/Sz or XCT descriptors** for this campaign or another original AlSi10Mg campaign with documented runouts. Search published supplements and data repositories before considering requests to authors. If none exists, keep Kramer as an outcome-only, rotating-bending source and predeclare its role before any scoring; it cannot validate a specimen-level feature algorithm from Table 4 alone.

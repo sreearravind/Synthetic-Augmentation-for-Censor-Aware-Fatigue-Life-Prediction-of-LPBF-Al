@@ -1,0 +1,6 @@
+pilot_glyph_id,read_method,fig9_page_pdf,fig11_page_pdf,sigma_max_MPa,R_published,finish,Ra_nm_second_read_approx,N_fig9_second_read_approx,N_fig11_second_read_approx,pilot_Ra_nm,N_fig9_pilot,N_fig11_pilot,relative_difference_fig9_vs_pilot,relative_difference_fig11_vs_pilot,event_interpretation,status
+A_M150_1,250dpi_manual_axes,8,10,150,0.1,M,1250,411000,417000,1251,416275,412179,-0.0127,0.0117,failure,candidate_only
+A_M150_2,250dpi_manual_axes,8,10,150,0.1,M,1030,1430000,1450000,1032,1421828,1423432,0.0057,0.0187,failure,candidate_only
+A_M150_3,250dpi_manual_axes,8,10,150,0.1,M,1080,1860000,1920000,1077,1865217,1857574,-0.0028,0.0336,failure,candidate_only
+A_M200_1,250dpi_manual_axes,8,10,200,0.1,M,970,46300,45400,969,46809,46456,-0.0109,-0.0227,failure,candidate_only
+A_M200_2,250dpi_manual_axes,8,10,200,0.1,M,1040,81200,80900,1045,81675,81815,-0.0058,-0.0112,failure,candidate_only

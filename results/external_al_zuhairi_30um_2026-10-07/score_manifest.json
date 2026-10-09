@@ -1,0 +1,16 @@
+{
+  "status": "scored_as_locked_external_outcome_only",
+  "forecast_blob": "9d0497d0d67f089c1b455e4539935f1318b213d4",
+  "forecast_manifest_blob": "5483c37a1303d531d8257329757a1b77ba916793",
+  "outcome_blob": "3847d10f768ee695fff8c2d22f13c73fc8a2af1d",
+  "score_blob": "743c61a048bb4be33167d5b57b706e4330996e7a",
+  "score_count": 276,
+  "unique_specimens": 23,
+  "event_failures": 23,
+  "documented_runouts": 0,
+  "max_quadrature_difference": 8.881784197001252e-16,
+  "no_training_or_recalibration": true,
+  "no_source_offset_update": true,
+  "one_preprint_publication": true,
+  "interpretation": "R_shift_failure_life_transfer_only"
+}

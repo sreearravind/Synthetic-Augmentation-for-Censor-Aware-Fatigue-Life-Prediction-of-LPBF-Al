@@ -1,0 +1,6 @@
+pilot_glyph_id,source_doi,fig9_page_pdf,fig11_page_pdf,R,finish,sigma_max_MPa,Ra_nm_figure11,Ra_read_halfwidth_nm,N_figure9_est,N_figure11_est,N_read_relative_halfwidth,event,censor_bound,graph_precision,specimen_id,status
+A_M150_1,10.1007/s40964-024-00759-x,8,10,0.1,M,150,1251,35,416275,412179,0.10,failure,,graph_approximate,unknown,pilot_only
+A_M150_2,10.1007/s40964-024-00759-x,8,10,0.1,M,150,1032,35,1421828,1423432,0.10,failure,,graph_approximate,unknown,pilot_only
+A_M150_3,10.1007/s40964-024-00759-x,8,10,0.1,M,150,1077,35,1865217,1857574,0.10,failure,,graph_approximate,unknown,pilot_only
+A_M200_1,10.1007/s40964-024-00759-x,8,10,0.1,M,200,969,35,46809,46456,0.10,failure,,graph_approximate,unknown,pilot_only
+A_M200_2,10.1007/s40964-024-00759-x,8,10,0.1,M,200,1045,35,81675,81815,0.10,failure,,graph_approximate,unknown,pilot_only
