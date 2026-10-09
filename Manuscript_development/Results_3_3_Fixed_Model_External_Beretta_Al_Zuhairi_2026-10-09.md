@@ -1,6 +1,6 @@
 # 3.3 Fixed-model external evaluation across the Beretta and Al-Zuhairi campaigns
 
-**Option A Results and Discussion working draft, 9 October 2026.** Only Sections 3.3.1–3.3.5 and Tables 3.6–3.9 constitute manuscript prose. The material after the horizontal rule is an evidence ledger and editorial guidance, not journal manuscript text. This subsection describes the **already archived** two-source, fixed-model prediction-before-score comparisons. No new fit, outcome score, cohort membership, model ranking criterion, or source-specific calibration was introduced during drafting.
+**Option A Results and Discussion working draft, 9 October 2026.** Only Sections 3.3.1–3.3.5 and Tables 3.6–3.8 constitute manuscript prose. The material after the horizontal rule is an evidence ledger and editorial guidance, not journal manuscript text. This subsection describes the **already archived** two-source, fixed-model prediction-before-score comparisons. No new fit, outcome score, cohort membership, model ranking criterion, or source-specific calibration was introduced during drafting.
 
 ## 3.3.1 External evaluation design and source separation
 
