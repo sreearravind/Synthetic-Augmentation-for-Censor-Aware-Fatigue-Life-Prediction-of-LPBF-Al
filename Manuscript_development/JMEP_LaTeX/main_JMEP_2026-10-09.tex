@@ -4,8 +4,27 @@
 % Retain a single-column working source and separate, numbered figures and tables.
 % Compile with: latexmk -xelatex -shell-escape -interaction=nonstopmode manuscript.tex
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
+\setmainfont{TeXGyreTermes}
 \usepackage[english]{babel}
+\usepackage{newunicodechar}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{∫}{\ensuremath{\int}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{φ}{\ensuremath{\phi}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{µ}{\ensuremath{\mu}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁻}{\textsuperscript{\ensuremath{-}}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{svg}
