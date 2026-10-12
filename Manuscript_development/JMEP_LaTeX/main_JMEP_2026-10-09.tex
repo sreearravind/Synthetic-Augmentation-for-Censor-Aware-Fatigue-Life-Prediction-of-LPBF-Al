@@ -1,10 +1,18 @@
- \documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 % Journal of Materials Engineering and Performance (JMEP) working LaTeX version.
 % Its current author instructions primarily request Word manuscript files.
 % Retain a single-column working source and separate, numbered figures and tables.
-% Compile with: latexmk -xelatex -shell-escape -interaction=nonstopmode manuscript.tex
-\usepackage{fontspec}
-\setmainfont{TeXGyreTermes}
+% Compile with: latexmk -pdf -interaction=nonstopmode main_JMEP_2026-10-09.tex
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \usepackage{textcomp}
+\else
+  \usepackage{fontspec}
+  \setmainfont{TeX Gyre Termes}
+\fi
 \usepackage[english]{babel}
 \usepackage{newunicodechar}
 \newunicodechar{−}{\ensuremath{-}}
@@ -27,7 +35,8 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage{svg}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage{booktabs,array,tabularx}
 \usepackage{pdflscape}
 \usepackage{hyperref}
@@ -38,6 +47,120 @@
 \setlength{\parindent}{1.5em}
 \setlength{\parskip}{0.35em}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=blue}
+
+% Standalone, engine-neutral vector artwork drawn directly with TikZ.
+% The source SVGs remain archived but are not required for compilation.
+\newcommand{\JMEPCohortFigure}{%
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  >=Latex,
+  font=\sffamily,
+  box/.style={draw=blue!55!black,very thick,rounded corners=4pt,
+              fill=blue!3,align=center,inner sep=8pt},
+  warnbox/.style={draw=orange!75!black,very thick,rounded corners=4pt,
+              fill=orange!5,align=center,inner sep=8pt}]
+\node[box,text width=8cm] (develop) at (0,5.5)
+ {\textbf{Development inventory: 199 original first exposures}\\172 failures; 27 runouts};
+\node[box,text width=6.3cm] (primary) at (-4.0,3.2)
+ {\textbf{Primary evaluation, $R=0.1$}\\192 records (166 failures, 26 runouts)\\3 independent publication holdouts};
+\node[warnbox,text width=6.3cm] (romano) at (4.0,3.2)
+ {\textbf{Romano transfer, $R=-1$}\\7 first exposures (6 failures, 1 runout)\\Already part of development inventory};
+\draw[->,thick] (develop.south) -- (0,4.55) -| (primary.north);
+\draw[->,thick] (develop.south) -- (0,4.55) -| (romano.north);
+\node[box,text width=3cm] (wu) at (-7.2,1.0) {\textbf{Wu 2021}\\41; 33/8};
+\node[box,text width=3cm] (chen) at (-3.8,1.0) {\textbf{Chen 2024}\\18; 18/0};
+\node[box,text width=3cm] (matusu) at (-0.2,1.0) {\textbf{Matu\v{s}\r{u} 2026}\\133; 115/18};
+\draw[->] (primary.south) -- (-4,2.2) -| (wu.north);
+\draw[->] (primary.south) -- (-4,2.2) -- (chen.north);
+\draw[->] (primary.south) -- (-4,2.2) -| (matusu.north);
+\draw[densely dashed,gray,thick] (-9.2,-0.1)--(9.2,-0.1);
+\node[align=center,font=\bfseries] at (0,-0.6)
+ {Fixed-model external checks; not pooled with the primary development score};
+\node[box,text width=6.7cm] at (-4.0,-2.1)
+ {\textbf{Beretta 2022, $R=0.1$}\\32 exposures (25 failures, 7 runouts)\\Runout stop at $5\times10^6$ cycles};
+\node[warnbox,text width=6.7cm] at (4.0,-2.1)
+ {\textbf{Al-Zuhairi 2026, $R=-1$}\\23 failures; no documented runouts\\One preprint campaign};
+\end{tikzpicture}%
+}%
+}
+
+
+\newcommand{\JMEPNLLFigure}{%
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[font=\sffamily]
+\node[font=\bfseries,anchor=west] at (0,5.7) {A. Held-out publication NLL};
+\begin{scope}[shift={(0,0)}]
+\draw[->,thick] (0,0) -- (9.3,0);
+\draw[->,thick] (0,0) -- (0,5.2);
+\foreach \y/\lab in {0/0.0,1.0/0.4,2.0/0.8,3.0/1.2,4.0/1.6} {
+  \draw[gray!30] (0,\y)--(9.1,\y);
+  \node[anchor=east,font=\scriptsize] at (-0.1,\y) {\lab};
+}
+\fill[gray!65] (0.480,0) rectangle (0.830,4.115);
+\node[font=\tiny,rotate=90,anchor=west] at (0.650,4.175) {1.65};
+\fill[cyan!65!black] (0.910,0) rectangle (1.260,4.012);
+\node[font=\tiny,rotate=90,anchor=west] at (1.080,4.072) {1.60};
+\fill[orange!85!black] (1.340,0) rectangle (1.690,4.013);
+\node[font=\tiny,rotate=90,anchor=west] at (1.510,4.073) {1.61};
+\fill[violet!70!black] (1.770,0) rectangle (2.120,4.012);
+\node[font=\tiny,rotate=90,anchor=west] at (1.940,4.072) {1.60};
+\node[font=\small] at (1.2,-0.44) {Wu};
+\fill[gray!65] (3.780,0) rectangle (4.130,2.143);
+\node[font=\tiny,rotate=90,anchor=west] at (3.950,2.203) {0.86};
+\fill[cyan!65!black] (4.210,0) rectangle (4.560,2.277);
+\node[font=\tiny,rotate=90,anchor=west] at (4.380,2.337) {0.91};
+\fill[orange!85!black] (4.640,0) rectangle (4.990,2.277);
+\node[font=\tiny,rotate=90,anchor=west] at (4.810,2.337) {0.91};
+\fill[violet!70!black] (5.070,0) rectangle (5.420,2.277);
+\node[font=\tiny,rotate=90,anchor=west] at (5.240,2.337) {0.91};
+\node[font=\small] at (4.5,-0.44) {Chen};
+\fill[gray!65] (7.080,0) rectangle (7.430,3.321);
+\node[font=\tiny,rotate=90,anchor=west] at (7.250,3.381) {1.33};
+\fill[cyan!65!black] (7.510,0) rectangle (7.860,3.258);
+\node[font=\tiny,rotate=90,anchor=west] at (7.680,3.318) {1.30};
+\fill[orange!85!black] (7.940,0) rectangle (8.290,3.268);
+\node[font=\tiny,rotate=90,anchor=west] at (8.110,3.328) {1.31};
+\fill[violet!70!black] (8.370,0) rectangle (8.720,3.261);
+\node[font=\tiny,rotate=90,anchor=west] at (8.540,3.321) {1.30};
+\node[font=\small] at (7.8,-0.44) {Matusu};
+\end{scope}
+\begin{scope}[shift={(10.5,0)}]
+\node[font=\bfseries,anchor=west] at (0,5.7) {B. Event-specific NLL};
+\draw[->,thick] (0,0)--(6.1,0);
+\draw[->,thick] (0,0)--(0,5.2);
+\foreach \y/\lab in {0/0.0,1/0.5,2/1.0,3/1.5,4/2.0,5/2.5} {
+  \draw[gray!30] (0,\y)--(6.0,\y);
+  \node[anchor=east,font=\scriptsize] at (-0.1,\y) {\lab};
+}
+\fill[gray!65] (0.680,0) rectangle (1.030,2.388);
+\node[font=\tiny,rotate=90,anchor=west] at (0.850,2.448) {1.19};
+\fill[cyan!65!black] (1.110,0) rectangle (1.460,2.459);
+\node[font=\tiny,rotate=90,anchor=west] at (1.280,2.519) {1.23};
+\fill[orange!85!black] (1.540,0) rectangle (1.890,2.465);
+\node[font=\tiny,rotate=90,anchor=west] at (1.710,2.525) {1.23};
+\fill[violet!70!black] (1.970,0) rectangle (2.320,2.459);
+\node[font=\tiny,rotate=90,anchor=west] at (2.140,2.519) {1.23};
+\node[font=\small] at (1.4,-0.44) {Failure};
+\fill[gray!65] (3.980,0) rectangle (4.330,4.468);
+\node[font=\tiny,rotate=90,anchor=west] at (4.150,4.528) {2.23};
+\fill[cyan!65!black] (4.410,0) rectangle (4.760,3.832);
+\node[font=\tiny,rotate=90,anchor=west] at (4.580,3.892) {1.92};
+\fill[orange!85!black] (4.840,0) rectangle (5.190,3.811);
+\node[font=\tiny,rotate=90,anchor=west] at (5.010,3.871) {1.91};
+\fill[violet!70!black] (5.270,0) rectangle (5.620,3.834);
+\node[font=\tiny,rotate=90,anchor=west] at (5.440,3.894) {1.92};
+\node[font=\small] at (4.7,-0.44) {Runout};
+\end{scope}
+\foreach \x/\clr/\label in {1/gray!65/C0,4/cyan!65!black/C1,7/orange!85!black/S0,10/violet!70!black/S1} {
+  \fill[\clr] (\x,-1.4) rectangle ++(0.38,0.24);
+  \node[anchor=west,font=\small] at (\x+0.46,-1.28) {\label};
+}
+\node[font=\small,align=center] at (8.3,-2.05)
+{Lower NLL is better; S0 and S1 are five-seed means.\\
+Runout macro: Wu and Matu\v{s}\r{u} only (Chen has no runouts).};
+\end{tikzpicture}%
+}%
+}
 \title{Testing the limits of synthetic augmentation for censor-aware fatigue-life prediction in laser powder bed fused AlSi10Mg}
 \author{Author details to be confirmed}
 \date{}
@@ -808,13 +931,13 @@ Seed & Beretta S0 & Beretta S1 & Al-Zuhairi S0 & Al-Zuhairi S1 \\ \midrule
 \section*{Figure captions and artwork}
 \begin{figure}[p]
 \centering
-\IfFileExists{Figures/Figure_1_Cohort_Provenance_Validation_Roles.svg}{\includesvg[width=\linewidth]{Figures/Figure_1_Cohort_Provenance_Validation_Roles}}{\fbox{Figure 1: SVG source required}}
+\JMEPCohortFigure
 \caption{Provenance and independent evaluation roles of the original fatigue observations. The 199-record development inventory separates into the 192-record primary R = 0.1 cohort and seven Romano R = −1 transfer records. Beretta and Al-Zuhairi are external fixed-model checks and do not increase the three-publication primary macro.}
 \label{fig:1}
 \end{figure}
 \begin{figure}[p]
 \centering
-\IfFileExists{Figures/Figure_2_Primary_Publication_and_Event_Specific_NLL.svg}{\includesvg[width=\linewidth]{Figures/Figure_2_Primary_Publication_and_Event_Specific_NLL}}{\fbox{Figure 2: SVG source required}}
+\JMEPNLLFigure
 \caption{(A) Mean censored predictive negative log likelihood by held-out experimental publication and (B) separate publication-macro failure-density and runout-survival likelihoods. S0/S1 show means over five predeclared synthetic-generation seeds; the runout macro excludes the Chen fold because it contains no observed runouts. Scores were derived from the frozen fold-metrics ledger, without refitting models.}
 \label{fig:2}
 \end{figure}
