@@ -1,49 +1,34 @@
-# JMEP working LaTeX package — 9 October 2026
+# JMEP LaTeX manuscript — MiKTeX and XeLaTeX build guide
 
-This directory holds a **faithful LaTeX conversion of the current integrated Option A research manuscript**, not a final ScholarOne submission file. No cohort, experimental outcome, numerical model result, scientific conclusion or literature claim was rewritten for the conversion.
+The corrected [main manuscript](main_JMEP_2026-10-09.tex) preserves the original scientific text, numerical results, equations, nine tables and two figures. **The main file now supports both pdfLaTeX (the MiKTeX default in the reported error log) and XeLaTeX.** It conditionally loads `fontspec` only when running with XeLaTeX or LuaLaTeX and instead uses T1-encoded Latin Modern fonts under pdfLaTeX. Both figures are drawn as vectors in TikZ directly from frozen results; Inkscape, `-shell-escape`, and SVG conversion are no longer required.
 
-## Package contents
+## Compile with MiKTeX on Windows
 
-- [main_JMEP_2026-10-09.tex](main_JMEP_2026-10-09.tex) — full manuscript: preserved title, ~187-word abstract, seven working keywords, Introduction, Methods, Results, Discussion, Conclusions, embedded numbered references, data/code availability, nine table floats and two figure floats.
-- [Figures/Figure_1_Cohort_Provenance_Validation_Roles.svg](Figures/Figure_1_Cohort_Provenance_Validation_Roles.svg) — first-exposure source provenance and evaluation roles.
-- [Figures/Figure_2_Primary_Publication_and_Event_Specific_NLL.svg](Figures/Figure_2_Primary_Publication_and_Event_Specific_NLL.svg) — publication-held-out NLL and censored failure/runout decomposition.
+Download the latest `main_JMEP_2026-10-09.tex` from this folder (GitHub **Raw**), not an older local copy. Open a terminal **in that file's directory** and run:
 
-To obtain the whole package, clone or download the GitHub repository and keep this folder's `main_JMEP_2026-10-09.tex` and the `Figures/` directory together.
-
-## Compile locally / Overleaf
-
-This is a **single-column XeLaTeX working manuscript using the standard LaTeX `article` class**, not a claim to be the official JMEP production template. It uses standard TeX Live packages, `fontspec`, `newunicodechar`, `amsmath`, `svg`, `tabularx`, `pdflscape` and `hyperref`. No separate BibTeX database is necessary because the sixteen source references are in `thebibliography` inside the main file.
-
-Set your editor's compiler to **XeLaTeX** and enable shell escape for SVG conversion by Inkscape. From within this directory, run:
-
-```bash
-latexmk -xelatex -shell-escape -interaction=nonstopmode main_JMEP_2026-10-09.tex
+```powershell
+pdflatex -halt-on-error -interaction=nonstopmode main_JMEP_2026-10-09.tex
+pdflatex -halt-on-error -interaction=nonstopmode main_JMEP_2026-10-09.tex
 ```
 
-In Overleaf: upload the `.tex` and both SVGs, choose XeLaTeX, and ensure SVG conversion is supported. If an environment disallows `-shell-escape`, convert both SVG files to vector PDF outside LaTeX and replace the two `\includesvg` commands with `\includegraphics` commands using the converted PDFs. The figure content comes from the archived analysis, not newly generated experimental values.
+The second pass resolves references. If using TeXworks, select the **pdfLaTeX** typesetting engine and click Typeset. For TeXstudio, configure the default compiler to **pdfLaTeX** under Options → Configure TeXstudio → Build. It is no longer necessary to switch engines. Alternatively, XeLaTeX remains supported:
 
-**Validation completed:** full main file and two SVGs were committed and read back; file structure, paired LaTeX environments, 12 equation blocks, 9 tables, 2 figures, 16 bibliography items and all 16 citation keys were checked. **Full-document XeLaTeX compilation and visual page proofing have not been performed on this exact repository source**; do not infer a PDF build was tested solely from structural checks.
+```powershell
+xelatex -halt-on-error -interaction=nonstopmode main_JMEP_2026-10-09.tex
+```
 
-## JMEP-specific author-instruction check
+Enable automatic installation of missing packages in MiKTeX Console if prompted (particularly `tikz`/PGF and `newunicodechar`). Do not use bare `latex` producing DVI; use the named PDF-generating compiler.
 
-Primary journal: *Journal of Materials Engineering and Performance* (JMEP).
+## Why the earlier file failed
 
-Official instructions: https://link.springer.com/journal/11665/submission-guidelines
+The log showed `This is pdfTeX` followed by `Fatal Package fontspec Error`. The earlier preamble had an unconditional `\usepackage{fontspec}`, a package which requires XeTeX or LuaTeX. The corrected preamble now detects the active engine with `iftex` and only loads that font package in the appropriate branch.
 
-Current instructions say:
+A second independent portability issue was that figures were included through `\includesvg`, which requires external SVG conversion (and usually shell escape). The figures now use native TikZ within the same `.tex` file. The original SVG files remain in [Figures](Figures/) as editable artwork for journal graphics preparation but are **not compilation dependencies**.
 
-1. JMEP's described manuscript submission workflow primarily requests a **Word manuscript file** with manuscript text, references, figure captions and tables in one document; tables/figures are placed after the reference list, and high-quality figure files are separate. This LaTeX version is an editable working source; convert to Word or confirm LaTeX upload support in ScholarOne before submission.
-2. Title maximum **15 words**. The original currently retained title is **16 words**; shorten it at journal-formatting stage without altering scientific findings.
-3. Abstract **fewer than 200 words**; the retained abstract is approximately **187 words**.
-4. **Four to seven keywords** (with two or three drawn from the journal's submission-menu categories). Seven working keywords are present, pending journal-menu selection.
-5. Journal references should include the article titles and the **full author list**. The current working bibliography retains the existing unresolved Matušů author list ("and coauthors") and should not be used as final journal copy before metadata verification; double-check the Al-Zuhairi preprint identity and Tridello 2023a/b order.
-6. JMEP requests figures that remain clear in black and white; for final line art it specifies high-resolution separate artwork. The SVGs are vector sources; prepare production proof/export in an accepted artwork format.
-7. Actual author/affiliation/contact data, funding, acknowledgments and declarations must be supplied by the authors. None were invented here.
+## Structure and source integrity
 
-Reference-only Springer Nature LaTeX resources: https://www.springernature.com/gp/authors/campaigns/latex-author-support . Springer provides a generic `sn-jnl` journal template, but the original JMEP guidelines should take precedence over general Springer guidance.
+The current scientific manuscript is the integrated Option A study on the limits of stress-only synthetic augmentation. The original primary macro censored NLL values C0 1.27714, C1 1.27299, S0 1.27449 and S1 1.27330 are not changed. Tables 1–9, 16 source references, original author–year findings and both figure captions are preserved. All 16 bibliography entries are embedded in the file, so no BibTeX or Biber run is needed.
 
-## Known conversion boundary
+For final *Journal of Materials Engineering and Performance* submission, the author list, some bibliographic metadata, title length and journal-specific Word-based submission requirements still require review. This corrected source is a working manuscript, not a guarantee of journal acceptance.
 
-The converted `.tex` keeps the original manuscript's section text, scores and end-of-article bibliography but maps Markdown tables to standard numbered LaTeX floats. Narrative author–year citations were changed into `\cite{...}` where systematically identifiable, without deleting the original study names. The numeric citation order and full reference bibliography require a final JMEP-specific copyedit. The current figures remain SVGs bundled with the source rather than already checked 1200-DPI exports.
-
-Source baseline (unchanged): [integrated Option A Markdown](../Manuscript_Integrated_Option_A_2026-10-09.md). If manuscript content is revised later, the LaTeX source and figures must be re-synchronized with that authoritative manuscript.
+**Build-check status:** The prior repo version was structurally inspected but not compiled; after this correction, the MiKTeX-compatible font and TikZ package branch was smoke-tested with local pdfLaTeX. A complete-manuscript automated build is being configured separately; check the repository's GitHub Actions PDF build before assuming the entire article has compiled without errors.
