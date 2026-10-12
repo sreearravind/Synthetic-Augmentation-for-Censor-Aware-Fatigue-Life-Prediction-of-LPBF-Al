@@ -268,7 +268,7 @@ For each test record, the censored negative log likelihood is
 with the appropriate C0 or C1 predictive distribution. The primary summary averages record scores within each held-out publication and then gives the three publication means equal weight. Failure and runout contributions are also reported separately; Chen has no runouts in its selected test rows. This protocol evaluates transfer to a new publication rather than fit to another specimen from a known publication. Synthetic generation and the S0/S1 student fits are specified in the following Methods subsection.
 
 
-\subsection{Training-only synthetic augmentation and fixed source-selection strategy}
+\subsection{Training-only augmentation and source filtering}
 
 \subsubsection{Source-conditioned generation of synthetic fatigue episodes}
 
@@ -336,17 +336,17 @@ Every original experimental training record retained unit likelihood weight. Wit
 For augmentation arm \(a\in\{S0,S1\}\), the student was fitted by minimizing the negative log of the weighted source-marginal likelihood
 
 \begin{equation}
+\begin{aligned}
 \mathcal{L}_{s}^{(a)}(\theta)
-=
-\int \phi(b;0,\tau^2)
-\left[\prod_{i\in D_{s,\mathrm{real}}}
-\ell_i(\theta,b)\right]
+&= \int \phi(b;0,\tau^2)
+\left[\prod_{i\in D_{s,\mathrm{real}}}\ell_i(\theta,b)\right]\\
+&\quad\times
 \left[\prod_{j\in D_{s,\mathrm{syn}}}
-\ell_j^{*}(\theta,b)^{\,w_{sj}^{(a)}}\right]\,db,
-\quad
-\ell(z,\delta\mid\theta,b)=
-f_Z(z\mid\theta,b)^{\delta}
-S_Z(z\mid\theta,b)^{1-\delta},
+\ell_j^{*}(\theta,b)^{w_{sj}^{(a)}}\right]\,\mathrm{d}b,\\
+\ell(z,\delta\mid\theta,b)
+&=f_Z(z\mid\theta,b)^{\delta}
+S_Z(z\mid\theta,b)^{1-\delta}.
+\end{aligned}
 \tag{2.5d}
 \end{equation}
 
