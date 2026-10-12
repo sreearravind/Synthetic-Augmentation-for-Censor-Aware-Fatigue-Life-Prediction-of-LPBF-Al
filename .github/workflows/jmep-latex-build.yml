@@ -1,0 +1,32 @@
+name: JMEP LaTeX PDF build
+on:
+  push:
+    paths:
+      - "Manuscript_development/JMEP_LaTeX/**"
+      - ".github/workflows/jmep-latex-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out manuscript
+        uses: actions/checkout@v4
+
+      - name: Build with pdfLaTeX (default MiKTeX-compatible engine)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main_JMEP_2026-10-09.tex
+          working_directory: Manuscript_development/JMEP_LaTeX
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Upload compiled PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: JMEP-manuscript-PDF
+          path: Manuscript_development/JMEP_LaTeX/main_JMEP_2026-10-09.pdf
+          if-no-files-found: error
