@@ -1,0 +1,30 @@
+name: MMTA Topical Collection LaTeX PDF
+on:
+  push:
+    paths:
+      - "Manuscript_development/MMTA_Topical_Collection_2026/**"
+      - ".github/workflows/mmta-latex-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Compile PDF with pdfLaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main_MMTA_2026-10-27.tex
+          working_directory: Manuscript_development/MMTA_Topical_Collection_2026
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+      - name: Upload proof PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: MMTA-topical-collection-manuscript-PDF
+          path: Manuscript_development/MMTA_Topical_Collection_2026/main_MMTA_2026-10-27.pdf
+          if-no-files-found: error
