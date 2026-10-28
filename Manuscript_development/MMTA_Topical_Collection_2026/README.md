@@ -32,7 +32,7 @@ The repository also runs an automated PDF build in [MMTA GitHub Actions](https:/
 
 ## Author-required submission blockers
 
-1. **Title-page identity and consent:** Confirm full name/order of all contributors, correct affiliated institutions at time of work, complete postal addresses, corresponding-author email and explicit submission approval by each coauthor. The manuscript intentionally contains placeholders.
+1. **Title-page identity and consent:** The user confirmed **Sreearravind Mani** as sole author and **Department of Mechanical Engineering, J.J. College of Engineering and Technology, Tiruchirappalli - 620009, Tamil Nadu, India** as affiliation. Corresponding-author email remains to be supplied. The sole author must review and approve the final version before submission.
 2. **Contribution statement:** Provide correct per-author research, software, curation, writing, and review contributions, signed off by all authors; required **before** the conflict section.
 3. **Conflicts and funding:** Supply verified statements (a no-conflict declaration may be used only after author confirmation); fill funding and any acknowledgments. Ensure original/public-source specimen tables' licensing and reproduction permissions are appropriate.
 4. **Reference audit:** The Matušů 2026 journal entry still says `and coauthors`, disallowed by MMTA. Verify the **full published-paper list and exact order** from the publisher, not only the differently ordered Zenodo dataset-creator list. Cross-check all 16 journal names against the CAS abbreviation index, exact years, article IDs/volumes, and Al-Zuhairi's 2026 preprint version and citation.
