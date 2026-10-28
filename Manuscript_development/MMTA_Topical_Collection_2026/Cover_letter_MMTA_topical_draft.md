@@ -22,6 +22,8 @@ Thank you for considering our article for the collection.
 
 Sincerely,
 
-**[Verified corresponding-author name, title, institution, email]**
-
-[On behalf of all verified coauthors]
+**Sreearravind Mani**  
+Department of Mechanical Engineering  
+J.J. College of Engineering and Technology  
+Tiruchirappalli - 620009, Tamil Nadu, India  
+**Corresponding-author email:** [to be supplied]
