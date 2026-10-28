@@ -26,5 +26,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MMTA-topical-collection-manuscript-PDF
-          path: Manuscript_development/MMTA_Topical_Collection_2026/main_MMTA_2026-10-27.pdf
+          path: |
+            Manuscript_development/MMTA_Topical_Collection_2026/main_MMTA_2026-10-27.pdf
+            Manuscript_development/MMTA_Topical_Collection_2026/main_MMTA_2026-10-27.tex
           if-no-files-found: error
