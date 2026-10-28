@@ -59,37 +59,48 @@
 \newcommand{\JMEPCohortFigure}{%
 \resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
-  >=Latex,
-  font=\sffamily,
-  box/.style={draw=blue!55!black,very thick,rounded corners=4pt,
-              fill=blue!3,align=center,inner sep=8pt},
-  warnbox/.style={draw=orange!75!black,very thick,rounded corners=4pt,
-              fill=orange!5,align=center,inner sep=8pt}]
-\node[box,text width=8cm] (develop) at (0,5.5)
- {\textbf{Development inventory: 199 original first exposures}\\172 failures; 27 runouts};
-\node[box,text width=6.3cm] (primary) at (-4.0,3.2)
- {\textbf{Primary evaluation, $R=0.1$}\\192 records (166 failures, 26 runouts)\\3 independent publication holdouts};
-\node[warnbox,text width=6.3cm] (romano) at (4.0,3.2)
- {\textbf{Romano transfer, $R=-1$}\\7 first exposures (6 failures, 1 runout)\\Already part of development inventory};
-\draw[->,thick] (develop.south) -- (0,4.55) -| (primary.north);
-\draw[->,thick] (develop.south) -- (0,4.55) -| (romano.north);
-\node[box,text width=3cm] (wu) at (-7.2,1.0) {\textbf{Wu 2021}\\41; 33/8};
-\node[box,text width=3cm] (chen) at (-3.8,1.0) {\textbf{Chen 2024}\\18; 18/0};
-\node[box,text width=3cm] (matusu) at (-0.2,1.0) {\textbf{Matu\v{s}\r{u} 2026}\\133; 115/18};
-\draw[->] (primary.south) -- (-4,2.2) -| (wu.north);
-\draw[->] (primary.south) -- (-4,2.2) -- (chen.north);
-\draw[->] (primary.south) -- (-4,2.2) -| (matusu.north);
-\draw[densely dashed,gray,thick] (-9.2,-0.1)--(9.2,-0.1);
-\node[align=center,font=\bfseries] at (0,-0.6)
- {Fixed-model external checks; not pooled with the primary development score};
-\node[box,text width=6.7cm] at (-4.0,-2.1)
- {\textbf{Beretta 2022, $R=0.1$}\\32 exposures (25 failures, 7 runouts)\\Runout stop at $5\times10^6$ cycles};
-\node[warnbox,text width=6.7cm] at (4.0,-2.1)
- {\textbf{Al-Zuhairi 2026, $R=-1$}\\23 failures; no documented runouts\\One preprint campaign};
+ >=Latex,
+ font=\sffamily\small,
+ sourcebox/.style={draw=blue!60!black,line width=0.9pt,
+   rounded corners=3pt,fill=blue!3,align=center,inner sep=8pt},
+ checkbox/.style={draw=orange!75!black,line width=0.9pt,
+   rounded corners=3pt,fill=orange!5,align=center,inner sep=8pt},
+ arrow/.style={-{Latex[length=3mm]},line width=0.75pt}]
+% Stage 1. Root inventory.
+\node[sourcebox,text width=7.4cm] (inventory) at (0,6.3)
+ {\textbf{Development inventory}\\199 first exposures: 172 failures / 27 runouts};
+% Stage 2. Separate primary and already-in-development transfer cohorts.
+\node[sourcebox,text width=6.9cm] (primary) at (-4.5,3.95)
+ {\textbf{Primary evaluation, $R=0.1$}\\192 records: 166 failures / 26 runouts\\
+ Three held-out publications};
+\node[checkbox,text width=6.9cm] (romano) at (4.5,3.95)
+ {\textbf{Romano 2018, $R=-1$}\\7 first exposures: 6 failures / 1 runout\\
+ Within development inventory; secondary check};
+% Separate, orthogonal connectors above the nodes.
+\coordinate (rootFork) at (0,5.45);
+\draw[line width=0.75pt] (inventory.south) -- (rootFork);
+\draw[arrow] (rootFork) -| (primary.north);
+\draw[arrow] (rootFork) -| (romano.north);
+% Stage 3. Compact, single source-membership box means no crossed child arrows.
+\node[sourcebox,inner sep=8pt] (sources) at (-4.5,1.55)
+ {\begin{tabular}{@{}ccc@{}}
+ \textbf{Wu 2021} & \textbf{Chen 2024} & \textbf{Matu\v{s}\r{u} 2026}\\
+ 41: 33 F / 8 R & 18: 18 F / 0 R & 133: 115 F / 18 R
+ \end{tabular}};
+\draw[arrow] (primary.south) -- (sources.north);
+% The lower external campaigns are independent, separately scored checks.
+\draw[densely dashed,gray,line width=0.75pt] (-9.2,0.25)--(9.2,0.25);
+\node[font=\sffamily\small\bfseries] at (0,-0.15)
+ {Fixed-model external checks: not pooled with primary scores};
+\node[sourcebox,text width=6.9cm] at (-4.5,-1.75)
+ {\textbf{Beretta 2022, $R=0.1$}\\32 first exposures: 25 failures / 7 runouts\\
+ Runout stop: $5\times10^{6}$ cycles};
+\node[checkbox,text width=6.9cm] at (4.5,-1.75)
+ {\textbf{Al-Zuhairi 2026, $R=-1$}\\23 failures; no documented runouts\\
+ One preprint campaign};
 \end{tikzpicture}%
 }%
 }
-
 
 \newcommand{\JMEPNLLFigure}{%
 \resizebox{\linewidth}{!}{%
@@ -168,9 +179,11 @@ Runout macro: Wu and Matu\v{s}\r{u} only (Chen has no runouts).};
 }%
 }
 \title{Source Heterogeneity, Right Censoring, and Synthetic Augmentation in Fatigue Assessment of LPBF AlSi10Mg}
-\author{\textit{Complete author list and affiliations: to be confirmed}\\
-\small \textit{Institutional addresses, city, country, postal code to be verified}\\
-\small \textit{Corresponding author and verified email to be supplied}}
+\author{\textbf{Sreearravind Mani}\\[3pt]
+\small Department of Mechanical Engineering\\
+\small J.J. College of Engineering and Technology\\
+\small Tiruchirappalli -- 620009, Tamil Nadu, India\\[3pt]
+\small \textit{Corresponding author email: to be supplied}}
 \date{}
 \begin{document}
 \maketitle
@@ -235,18 +248,17 @@ The processing--structure--property relevance of this comparison lies in separat
 
 \subsection{Experimental sources and provenance}
 
-We assembled published, numerically reported fatigue results for laser powder bed fused AlSi10Mg from four underlying publication groups. Wu et al.\textasciitilde{}\cite{wu2021} supplied Table 4 values; Chen et al.\textasciitilde{}\cite{chen2024} supplied smooth-specimen Tables 3–4; Matušů et al.\textasciitilde{}\cite{matusu2026} supplied a linked experimental workbook; and Romano et al.\textasciitilde{}\cite{romano2018} supplied one underlying campaign with selected first-exposure values numerically re-reported by Tognan et al.\textasciitilde{}\cite{tognan2023}. The Romano and Tognan reports were linked to the same experiment, not counted as two independent publications. Each normalized record retains a source locator, original stress basis, stress ratio, test mode, outcome or stopping cycle, condition labels, and a source/publication group. Where a paper omitted original specimen identifiers, a local identifier preserves the table, group and row position without implying access to an unpublished specimen ID. Only source-table or source-workbook numeric records enter this cohort; approximate plot readings and generated records remain separate.
+We assembled published, numerically reported fatigue results for laser powder bed fused AlSi10Mg from four underlying publication groups. Wu et al.\textasciitilde{}\cite{wu2021} supplied Table 4 values; Chen et al.\textasciitilde{}\cite{chen2024} supplied smooth-specimen Tables 3–4; Matušů et al.\textasciitilde{}\cite{matusu2026} supplied a linked experimental workbook; and Romano et al.\textasciitilde{}\cite{romano2018} supplied one underlying campaign with selected first-exposure values numerically re-reported by Tognan et al.\textasciitilde{}\cite{tognan2023}. The Romano and Tognan reports were linked to the same experiment, not counted as two independent publications. Each normalized record retains a source locator, original stress basis, stress ratio, test mode, outcome or stopping cycle, condition labels, and a source/publication group. Where a paper omitted original specimen identifiers, a local identifier preserves the table, group and row position without implying access to an unpublished specimen ID. Only source-table or source-workbook numeric records enter this cohort; approximate plot readings and generated records remain separate. Table~\ref{tab:1} summarizes the four original experimental source groups.
 
-\begin{landscape}
 \begin{table}[!htbp]
 \centering
 \caption{Original first-exposure experimental sources, source-dependent censoring and evaluation role. Failure and runout counts refer to distinct first-exposure records, not repeated tests.}
 \label{tab:1}
 \begingroup
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.22}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}ccc>{\raggedright\arraybackslash}X@{}}
 \toprule
 Underlying publication group & Numeric source and included subset & Failures & Runouts & Total & Evaluation role \\ \midrule
 Wu 2021 & Table 4, horizontal and vertical HCF specimens & 33 & 8 & 41 & Primary, (R=0.1) \\
@@ -258,7 +270,6 @@ Romano 2018, as re-reported by Tognan 2023 & Tables 1–2, individually adjudica
 \end{tabularx}
 \endgroup
 \end{table}
-\end{landscape}
 \FloatBarrier
 
 Nominal stress amplitude was harmonized from each source’s documented stress basis and ratio; the original locator and source stress definition remain in the extraction ledgers. All included tests are uniaxial. Surface, heat-treatment, orientation, printer and powder descriptors are retained as provenance, not fitted as pooled specimen predictors. The modelling comparison uses stress amplitude only. Defects selected from fracture surfaces and condition-average roughness are not treated as prospectively available individual features.
@@ -514,20 +525,19 @@ The primary evidence was limited by three independent publication groups, differ
 
 \subsubsection{Predictive performance across the three held-out publications}
 
-The primary leave-one-publication-out evaluation used 192 original, numerically reported first-exposure fatigue records at stress ratio \(R=0.1\): 166 observed failures and 26 right-censored runouts. All models predicted the same real records from Wu et al. (2021; \(n=41\)), Chen et al. (2024; \(n=18\)) and Matušů et al. (2026; \(n=133\)) while each publication was excluded in turn from its training partition. Table 2 reports mean censored negative log likelihood (NLL; lower is better). C0 and C1 were fitted using real training observations only; the S0 and S1 entries are arithmetic means over the five prespecified training-generation seeds.
+The primary leave-one-publication-out evaluation used 192 original, numerically reported first-exposure fatigue records at stress ratio \(R=0.1\): 166 observed failures and 26 right-censored runouts. All models predicted the same real records from Wu et al. (2021; \(n=41\)), Chen et al. (2024; \(n=18\)) and Matušů et al. (2026; \(n=133\)) while each publication was excluded in turn from its training partition. Table~\ref{tab:2} reports mean censored negative log likelihood (NLL; lower is better). C0 and C1 were fitted using real training observations only; the S0 and S1 entries are arithmetic means over the five prespecified training-generation seeds.
 
-\begin{landscape}
 \begin{table}[!htbp]
 \centering
 \caption{Publication-held-out censored predictive NLL for the four frozen models. The primary macro is the unweighted mean of the three held-out-publication means. The pooled mean weights each of the 192 individual test records equally and is secondary. The S0 and S1 numbers are five-seed averages, not five independent experimental replications.}
 \label{tab:2}
 \begingroup
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.22}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}*{5}{>{\centering\arraybackslash}X}@{}}
 \toprule
-Model arm & Wu (41; 33 failure / 8 runout) & Chen (18; 18 / 0) & Matušů (133; 115 / 18) & \textbf{Equal-publication macro NLL} & Pooled 192-record NLL \\ \midrule
+Model & Wu (41) & Chen (18) & Matušů (133) & \textbf{Macro NLL} & Pooled NLL \\ \midrule
 C0 — pooled experimental Weibull AFT & 1.64587 & 0.85725 & 1.32829 & 1.27714 & 1.35194 \\
 \textbf{C1 — source-marginal experimental Weibull AFT} & \textbf{1.60490} & 0.91078 & \textbf{1.30327} & \textbf{1.27299} & \textbf{1.33089} \\
 S0 — all-source parametric self-distillation & 1.60536 & 0.91083 & 1.30726 & 1.27449 & 1.33375 \\
@@ -536,7 +546,6 @@ S1 — fixed observed-runout source filter & 1.60475 & 0.91083 & 1.30431 & 1.273
 \end{tabularx}
 \endgroup
 \end{table}
-\end{landscape}
 \FloatBarrier
 
 The experimental-only source-marginal model C1 attained the lowest \textbf{mean primary macro} NLL, 1.27299, compared with 1.27714 for the simpler pooled experimental model C0. That aggregate difference was not uniform across publications. C1 reduced the Wu score from 1.64587 to 1.60490 and the Matušů score from 1.32829 to 1.30327, but increased the Chen score from 0.85725 to 0.91078. The contrast shows that accounting for source-to-source variation changed the likelihood assigned to genuinely held-out fatigue outcomes in a publication-dependent way; the direction was not consistently favorable for every source.
@@ -547,7 +556,7 @@ The specimen-weighted NLL displayed the same broad ordering (C1, 1.33089; S1, 1.
 
 \subsubsection{Failure-density and runout-survival trade-offs}
 
-The event-specific breakdown showed that the overall model rankings masked an important contrast between predicted failure density and predicted survival at documented stopping cycles. Table 3 gives separately the equal-publication mean NLL of observed failures and of right-censored runouts. The failure macro averages the three publication-specific failure scores. The runout macro averages \textbf{Wu and Matušů only} because the 18 selected Chen outcomes were all failures. These two quantities therefore have different contributing publication sets and should not be interpreted as a single uniformly weighted partition of the overall macro.
+The event-specific breakdown showed that the overall model rankings masked an important contrast between predicted failure density and predicted survival at documented stopping cycles. Table~\ref{tab:3} gives separately the equal-publication mean NLL of observed failures and of right-censored runouts. The failure macro averages the three publication-specific failure scores. The runout macro averages \textbf{Wu and Matušů only} because the 18 selected Chen outcomes were all failures. These two quantities therefore have different contributing publication sets and should not be interpreted as a single uniformly weighted partition of the overall macro.
 
 \begin{table}[!htbp]
 \centering
@@ -576,7 +585,7 @@ Unrestricted S0 self-distillation reduced runout-survival macro NLL modestly rel
 
 \subsubsection{Variation among the five fixed synthetic-generation seeds}
 
-The stochastic generation protocol used the same five predetermined seeds for S0 and S1, and all of them were retained. Table 4 reports the equal-publication macro NLL for each generation seed. C1, the fixed experimental-only comparator, remained at 1.27299 regardless of seed. A lower seed-specific score does not constitute a separate validation experiment because all seeds re-use the same three held-out original publications.
+The stochastic generation protocol used the same five predetermined seeds for S0 and S1, and all of them were retained. Table~\ref{tab:4} reports the equal-publication macro NLL for each generation seed. C1, the fixed experimental-only comparator, remained at 1.27299 regardless of seed. A lower seed-specific score does not constitute a separate validation experiment because all seeds re-use the same three held-out original publications.
 
 \begin{table}[!htbp]
 \centering
@@ -631,7 +640,7 @@ Taken together, the three-publication analysis demonstrates a reproducible, prov
 
 Following the primary publication-held-out evaluation at stress ratio \(R=0.1\) (Section 3.1), the fitted model family was examined under a distinctly different loading condition using seven original first-exposure records from the Romano et al.\textasciitilde{}\cite{romano2018} experimental campaign, numerically re-reported by Tognan et al.\textasciitilde{}\cite{tognan2023}. This secondary dataset consisted of six observed failures and one right-censored first exposure at \(R=-1\). The recorded nominal stress amplitudes spanned 90–200 MPa. The six failures occurred between 474 and 237,485 cycles; the single runout was specimen 3, which survived at least 8,889,311 cycles at 110 MPa. The subsequent higher-stress failure of this same specimen was excluded as a dependent retest. The seven records already belonged to the 199-row frozen development inventory and were \textbf{not} counted as a fourth primary publication fold or an untouched external confirmation set.
 
-For the ratio-transfer challenge, all four model arms were fitted using the full 192 first-exposure \(R=0.1\) training records from Wu, Chen and Matušů. The C0 and C1 experimental-only fits and the five S0/S1 training-generation replicates were fixed without fitting a stress-ratio effect, updating the Romano source intercept from its outcomes or incorporating Romano observations into the training generator. All seven Romano records were evaluated using their original failure event or survival bound under the same censored predictive negative log likelihood (NLL) definition as in Section 2.6. Table 5 separates the overall mean from failure and runout contributions and also provides descriptive predictive-median error for the six failures.
+For the ratio-transfer challenge, all four model arms were fitted using the full 192 first-exposure \(R=0.1\) training records from Wu, Chen and Matušů. The C0 and C1 experimental-only fits and the five S0/S1 training-generation replicates were fixed without fitting a stress-ratio effect, updating the Romano source intercept from its outcomes or incorporating Romano observations into the training generator. All seven Romano records were evaluated using their original failure event or survival bound under the same censored predictive negative log likelihood (NLL) definition as in Section 2.6. Table~\ref{tab:5} separates the overall mean from failure and runout contributions and also provides descriptive predictive-median error for the six failures.
 
 \begin{table}[!htbp]
 \centering
@@ -711,20 +720,19 @@ For each source, the experimental IDs and nominal stress inputs were fixed in an
 
 The Beretta campaign supplied 32 independently identified first exposures, drawn from 40 documented loading episodes after excluding eight subsequent exposures of previously tested specimens. There were 19 as-built specimens (15 failures, four runouts) and 13 machined specimens (10 failures, three runouts). The original supplement reported stress range \(\Delta\sigma\), converted here to stress amplitude as \(\sigma_a=\Delta\sigma/2\), giving a source span of 22.5–105 MPa, inside the 22.5–160 MPa numerical range of the full primary training cohort. Its seven initial-exposure runouts were scored as survival to the paper's documented \(5\times10^6\)-cycle bound rather than to the \(10^7\)-cycle policy of the primary model-development studies. The first-exposure and campaign-identity audit prevented the linked ESA reanalyses from being counted as additional independent validation publications.
 
-Table 7 gives the archived source-level censored NLL (smaller is better), together with separate failure and runout outcomes and prespecified exploratory strata. C1 reduced mean NLL relative to C0 from 1.55455 to 1.48670. The difference was concentrated in runout survival: C0 had a runout NLL of 1.92912, compared with 1.59703 for C1, while the failure-density NLL moved in the opposite direction, from 1.44968 to 1.45581. This echoes the event-specific trade-off observed in the primary three-publication test without proving that the same model ranking holds universally across LPBF AlSi10Mg experiments.
+Table~\ref{tab:7} gives the archived source-level censored NLL (smaller is better), together with separate failure and runout outcomes and prespecified exploratory strata. C1 reduced mean NLL relative to C0 from 1.55455 to 1.48670. The difference was concentrated in runout survival: C0 had a runout NLL of 1.92912, compared with 1.59703 for C1, while the failure-density NLL moved in the opposite direction, from 1.44968 to 1.45581. This echoes the event-specific trade-off observed in the primary three-publication test without proving that the same model ranking holds universally across LPBF AlSi10Mg experiments.
 
-\begin{landscape}
 \begin{table}[!htbp]
 \centering
 \caption{Beretta 2022 fixed-model censored NLL. Each entry is the mean over real first exposures in the indicated subset; S0 and S1 are the arithmetic means over the five preselected training seeds. The Beretta subsets are descriptive strata of \textbf{one underlying campaign}, not independent publication holdouts. The 31-record sensitivity uses the same fixed predictions without retraining.}
 \label{tab:7}
 \begingroup
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.22}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.29\linewidth}>{\centering\arraybackslash}p{0.17\linewidth}*{4}{>{\centering\arraybackslash}X}@{}}
 \toprule
-First-exposure subset & Records (failures/runouts) & C0 & C1 & S0, five-seed mean & S1, five-seed mean \\ \midrule
+First-exposure subset & Records (F/R) & C0 & C1 & S0 & S1 \\ \midrule
 \textbf{Entire Beretta campaign} & \textbf{32 (25/7)} & 1.55455 & 1.48670 & \textbf{1.48490} & 1.48624 \\
 Failure-density contribution & 25 (25/0) & \textbf{1.44968} & 1.45581 & 1.45627 & 1.45569 \\
 Runout-survival contribution & 7 (0/7) & 1.92912 & 1.59703 & \textbf{1.58715} & 1.59535 \\
@@ -735,7 +743,6 @@ Exclude flagged failure; no refit & 31 (24/7) & 1.57528 & 1.50366 & \textbf{1.50
 \end{tabularx}
 \endgroup
 \end{table}
-\end{landscape}
 \FloatBarrier
 
 The unrestricted S0 augmentation yielded a small five-seed-mean reduction from C1's 1.48670 to 1.48490 (difference \(-0.00180\)). This overall difference combined an improvement in seven-runout survival NLL (1.58715 versus 1.59703) with a \textbf{slight worsening} of failure-density NLL (1.45627 versus 1.45581). The fixed-filter S1 model changed the source mean only marginally, to 1.48624 (difference \(-0.00046\) from C1), with a smaller runout improvement and nearly unchanged failure density. The two surface categories also behaved differently: in the as-built subset, the five-seed S0 mean NLL was slightly above C1 (1.44186 versus 1.44049), whereas in the machined subset it was lower (1.54781 versus 1.55425). Because finish, batch, roughness and defect measures were audit descriptors rather than fitted predictors, these contrasts cannot identify causal finish effects or demonstrate successful specimen-specific feature-based prediction.
@@ -775,7 +782,7 @@ The saved condition-level diagnostics showed pronounced differences in predictio
 
 \subsubsection{Fixed-seed variability in the two external checks}
 
-Although S0 and S1 were evaluated on two additional sources, each external source reused \textbf{the same 12 archived model configurations}: C0 and C1 once each, plus S0 and S1 at the five generation seeds fixed during development. Table 9 preserves all five seed outcomes within each campaign and prevents the most favorable stochastic fit from replacing the fixed mean.
+Although S0 and S1 were evaluated on two additional sources, each external source reused \textbf{the same 12 archived model configurations}: C0 and C1 once each, plus S0 and S1 at the five generation seeds fixed during development. Table~\ref{tab:9} preserves all five seed outcomes within each campaign and prevents the most favorable stochastic fit from replacing the fixed mean.
 
 \begin{table}[!htbp]
 \centering
@@ -914,16 +921,13 @@ The source-audited first-exposure cohort, validation membership ledger, precompa
 
 \clearpage
 \section*{Author Contributions}
-\textit{Complete and approve a contribution statement for every actual author before submission; the current author list and attribution have not been finalized.}
+Sreearravind Mani conceived and designed the study, compiled and curated the experimental data, developed and implemented the analysis and modelling workflow, evaluated and interpreted the results, prepared the figures, and wrote and revised the manuscript. As the sole author, Sreearravind Mani is responsible for the work and approved this manuscript version.
 
 \section*{Conflict of Interest}
 \textit{Authors must verify and disclose actual financial and nonfinancial conflicts, or approve a no-conflict statement.}
 
 \section*{Funding}
-\textit{Authors must verify funding sources and grant numbers, or approve a no-funding statement.}
-
-\section*{Acknowledgments}
-\textit{Insert only verified acknowledgments, where applicable.}
+This research received no external funding.
 
 \section*{References}
 \begin{thebibliography}{99}
